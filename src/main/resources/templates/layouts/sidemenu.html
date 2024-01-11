@@ -1,0 +1,68 @@
+<div class="sidemenu">
+    <link rel="stylesheet" href="/css/sidemenu.css">
+    <div class="company_name">Witty Wave</div>
+    <div class="sidemenu_list">
+        <ul>
+            <li>
+                <div>메일</div>
+            </li>
+            <li>
+                <div>근태 관리</div>
+            </li>
+            <li>
+                <div>캘린더</div>
+            </li>
+            <li>
+                <div>프로젝트</div>
+            </li>
+            <li>
+                <div>전자 결재</div>
+            </li>
+            <li>
+                <div>게시판</div>
+            </li>
+            <li>
+                <div>조직</div>
+            </li>
+        </ul>
+    </div>
+    <div class="working_status_wrap">
+        <table class="working_status">
+            <tr class="working_status_row1">
+                <td class="status_title" colspan="2">
+                    <div>
+                        <span>나의 상태</span>
+                    </div>
+                </td>
+            </tr>
+            <tr class="working_status_row2">
+                <td class="status_profile">
+                    <div>
+                        <img src="/images/profile_example/ellipse_2.png" alt="프로필 이미지">
+                    </div>
+                </td>
+                <td class="status_name_and_team">
+                    <div>
+                        <span class="status_name_text">연인지</span>
+                        <img id="status_img" src="" alt="상태이미지">
+                    </div>
+                    <br>
+                    <span class="status_team_text">개발본부 / 개발1팀</span>
+                </td>
+            </tr>
+            <tr class="working_status_row3">
+                <td class="select_status" colspan="2">
+                    <select id="status_dropdown">
+                        <option value="none" selected>근무 상태를 선택하세요.</option>
+                        <option value="office">오피스 근무</option>
+                        <option value="remote">재택 근무</option>
+                        <option value="vacation">휴가 중</option>
+                        <option value="meeting">미팅 중</option>
+                        <option value="away">자리 비움</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <script th:src="@{/js/sidemenu.js}"></script>
+</div>

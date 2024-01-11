@@ -1,0 +1,101 @@
+.project_section {
+    width: 100%;
+    display: grid;
+    grid-column: auto;
+}
+
+.project_header {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 100px;
+}
+
+.project_header_title {
+    font-size: 30px;
+    padding-left: 60px;
+}
+
+.project_input_wrap {
+    height: 43px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-right: 60px;
+}
+
+.project_search_input {
+    border: 1px solid #D9D9D9;
+    box-sizing: border-box;
+    padding-left: 13px;
+    font-size: 16px;
+    width: 195px;
+    height: 100%;
+}
+
+.project_search_button {
+    font-size: 20px;
+    width: 64px;
+    height: 100%;
+    border-radius: 10px;
+    color: white;
+    background: #fa9a85;
+    border: 0;
+}
+
+.project_create_button {
+    font-size: 20px;
+    width: 160px;
+    height: 100%;
+    border-radius: 10px;
+    color: white;
+    background: #fa9a85;
+    border: 0;
+}
+
+.project_body {
+    width: 100%;
+}
+
+.project_list_wrap {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 43px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.project_list_wrap > div {
+    height: 284px;
+    border: 1px solid #d9d9d9;
+    box-sizing: border-box;
+    /*수정 예정*/
+    /*우선적으로 값을 고정했다.*/
+    width: 380px;
+    /*수정 예정*/
+}
+
+.project_footer {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    height: 20px;
+}
+
+.project_footer > input[type=button] {
+    border-radius: 2px;
+    font-size: 14px;
+    border: 1px solid #d9d9d9;
+    background: white;
+    cursor: pointer;
+}
+
+.project_footer > input[type=button]:hover {
+    background: #d9d9d9;
+}
+
+
+/* 삭제 예정 */
+.project_list_wrap > div:hover {
+    background-color: #fa9a85;
+}
