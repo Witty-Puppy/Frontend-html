@@ -1,2 +1,7 @@
-package com.wittypuppy.mail.controller;public class MailController {
+package com.wittypuppy.mail.controller;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class MailController {
 }
