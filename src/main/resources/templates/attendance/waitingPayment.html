@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내 결재 문서 대기</title>
+    <link rel="stylesheet" href="/css/waitingPayment.css">
+</head>
+<body>
+    <div class="main">
+        <th:block th:include="/layouts/sidemenu"/>
+        <th:block th:include="/attendance/sidemenu2"/>
+
+        <div class="main2">
+            <span class="main-title">내 결재 문서</span>
+            <div class="bar"></div>
+            <div class="filter-area">
+                <div class="box-area">
+                    <a href="" class="waiting-box"><div>대기</div></a>
+                    <a href="" class="approval-box"><div>승인</div></a>
+                    <a href="" class="reject-box"><div>반려</div></a>
+                </div>
+
+                <div class="bar2"></div>
+            </div>
+            <button class="approval">승인</button>
+            <!-- <button class="rejection">반려</button> -->
+
+            <table >
+                <tr style="background-color: #F5F5F5;" >
+                    <td><input type="checkbox" id="selectAll" onclick="toggleCheckboxes()"></td>
+                    <td>신청기간</td>
+                    <td>종류</td>
+                    <td>신청자</td>
+                    <td>소속</td>
+                    <td>관리</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>2023-01-05(금)~2023-01-05(금)</td>
+                    <td>연차-오후 반차</td>
+                    <td>홍길동사원</td>
+                    <td>마케팅팀</td>
+                    <td >
+                        <button >승인</button>
+                        <button>반려</button>
+                        <button onclick="openPopup()">상세보기</button>
+                    </td>
+                </tr>
+
+            </table>
+
+            <!-- 페이징 -->
+            <div class="paging-po"> << < 1  2  3  4  5 > >></div>
+
+        </div>
+    </div>
+
+    
+    <!-- 상세보기 팝업 창 서류 불러오기 -->
+    
+    <div id="popup">
+        <div id="close-btn" onclick="closePopup()">닫기</div>
+    
+    </div>
+
+
+
+    <script>
+
+        function openPopup() {
+            // 팝업 열기
+            document.getElementById('popup').style.display = 'block';
+        }
+
+        function closePopup() {
+            // 팝업 닫기
+            document.getElementById('popup').style.display = 'none';
+        }
+
+
+            //체크 박스 모두 선택
+        function toggleCheckboxes() {
+            var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            var selectAllCheckbox = document.getElementById('selectAll');
+
+            checkboxes.forEach(function (checkbox) {
+                checkbox.checked = selectAllCheckbox.checked;
+            });
+        }
+
+
+    </script>
+
+</body>
+</html>
