@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .sidemenu {
+    color: #606060;
+    height: 100%;
+    width: 326px;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+}
+
+.company_name {
+    width: 100%;
+    font-size: 40px;
+    text-align: center;
+    padding: 1em 0em 0.7em 0em;
+}
+
+.sidemenu_list ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0px auto;
+    width: 280px;
+}
+
+.sidemenu_list li {
+    border-radius: 10px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    cursor: pointer;
+}
+
+.sidemenu_list li:hover {
+    background-color: #fa9a85;
+}
+
+.sidemenu_list li div {
+    font-size: 20px;
+    margin-right: 40px;
+}
+
+.sidemenu_list li:hover div {
+    color: white;
+}
+
+.working_status_wrap {
+    margin: 20px auto;
+    width: 270px;
+    height: 243px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+}
+
+.working_status {
+    width: 100%;
+    height: 100%;
+}
+
+.working_status td {
+    box-sizing: border-box;
+}
+
+.status_title {
+    height: 40px;
+}
+
+.status_title div {
+    display: flex;
+    height:100%;
+    flex-direction: column-reverse;
+}
+
+.status_title span {
+    padding-left: 20px;
+    font-size: 20px;
+}
+
+.status_profile {
+    height: 100px;
+}
+
+.status_profile div {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.status_name_text {
+    font-size: 20px;
+    padding-left: 0.5em;
+}
+
+.status_team_text {
+    font-size: 16px;
+    padding-left: 0.5em;
+}
+
+.status_name_and_team br {
+    margin: 0.4em 0;
+    content: "";
+    display: block;
+}
+
+#status_img {
+    padding-left: 0.5em;
+    height: 1.3em;
+}
+
+.status_name_and_team div {
+    display: flex;
+    align-items: center;
+}
+
+.status_profile img {
+    width: 75px;
+    height: 75px;
+    margin: 0px 10px;
+    border-radius: 50%;
+}
+
+.status_temp_text {
+    font-size: 16px;
+}
+
+.select_status {
+    text-align: center;
+    height: 36px;
+    padding-bottom: 20px;
+}
+
+.select_status select {
+    width: 85%;
+    height: 36px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="sidemenu">
+        
+        <div class="company_name">Witty Wave</div>
+        <div class="sidemenu_list">
+            <ul>
+                <li>
+                    <div>메일</div>
+                </li>
+                <li>
+                    <div>근태 관리</div>
+                </li>
+                <li>
+                    <div>캘린더</div>
+                </li>
+                <li>
+                    <div>프로젝트</div>
+                </li>
+                <li>
+                    <div>전자 결재</div>
+                </li>
+                <li>
+                    <div>게시판</div>
+                </li>
+                <li>
+                    <div>조직</div>
+                </li>
+            </ul>
+        </div>
+        <div class="working_status_wrap">
+            <table class="working_status">
+                <tr class="working_status_row1">
+                    <td class="status_title" colspan="2">
+                        <div>
+                            <span>나의 상태</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="working_status_row2">
+                    <td class="status_profile">
+                        <div>
+                            <img src="/images/profile_example/ellipse_2.png" alt="프로필 이미지">
+                        </div>
+                    </td>
+                    <td class="status_name_and_team">
+                        <div>
+                            <span class="status_name_text">연인지</span>
+                            <img id="status_img" src="" alt="상태이미지">
+                        </div>
+                        <br>
+                        <span class="status_team_text">개발본부 / 개발1팀</span>
+                    </td>
+                </tr>
+                <tr class="working_status_row3">
+                    <td class="select_status" colspan="2">
+                        <select id="status_dropdown">
+                            <option value="none" selected>근무 상태를 선택하세요.</option>
+                            <option value="office">오피스 근무</option>
+                            <option value="remote">재택 근무</option>
+                            <option value="vacation">휴가 중</option>
+                            <option value="meeting">미팅 중</option>
+                            <option value="away">자리 비움</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!--
+            <script th:src="@{/js/sidemenu.js}"></script>
+        -->
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+        const statusImageMap = {
+            "office": "/images/working_status/office.png",
+            "remote": "/images/working_status/remote.png",
+            "vacation": "/images/working_status/vacation.png",
+            "meeting": "/images/working_status/meeting.png",
+            "away": "/images/working_status/away.png"
+        };
+    
+        const statusImage = document.getElementById("status_img");
+        statusImage.style.display = 'none';
+        const statusDropdown = document.getElementById('status_dropdown');
+    
+        statusDropdown.addEventListener('change', (e) => {
+            const status = e.target.value;
+            if (status === 'none') {
+                statusImage.style.display = 'none';
+            } else {
+                statusImage.style.display = '';
+                statusImage.src = statusImageMap[status];
+            }
+        })
+    })
+    </script>
+</body>
+</html>
+
+
+
+
+
