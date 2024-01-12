@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "remote": "/images/working_status/remote.png",
         "vacation": "/images/working_status/vacation.png",
         "meeting": "/images/working_status/meeting.png",
-        "away": "/images/working_status/away.png"
+        "away": "/images/working_status/clock_545308.png"
     };
 
     const statusImage = document.getElementById("status_img");
