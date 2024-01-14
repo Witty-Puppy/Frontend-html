@@ -1,0 +1,88 @@
+/* ================= 여기부터 새로추가한 css입니다 =================== */
+
+/* 새로운 스타일 추가 */
+
+.second-content{
+    display: flex;
+    background-color: gainsboro;
+    margin-left: 326px; /* 사이드바의 너비만큼 여백 설정 */
+    box-sizing: border-box; /* 패딩과 경계 상자 크기 포함 */
+    width: 300px;
+    height:1080px;
+
+}
+
+.group-content {
+    display: flex;
+    /* margin-left: 326px; 사이드바의 너비만큼 여백 설정 */
+    margin-top: 30px;
+    padding: 20px; /* 내용에 여백 추가 (선택사항) */
+    box-sizing: border-box; /* 패딩과 경계 상자 크기 포함 */
+    flex-direction: column;
+
+}
+
+
+.groupchart {
+    width: 250px;
+    border-color: bisque;
+    border-radius: 1px;
+    border: 1px solid rgb(178, 177, 177);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column; /* 세로로 정렬 */
+    align-items: center;
+    padding-bottom: 30px;
+}
+
+#org-chart-box {
+    width: 230px;
+    max-height: 600px;
+    border-color: bisque;
+    border-radius: 1px;
+    border: 1px solid rgb(178, 177, 177);
+    box-sizing: border-box;
+    margin: 0 auto; /* 수평 가운데 정렬을 위한 속성 추가 */
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* 스크롤 추가 */
+
+}
+
+
+
+#org-chart{
+    margin-top: 15px;
+    max-height: 800px;
+}
+
+.search-container {
+    display: flex;
+    width: 95%;
+    max-width: 230px;
+    margin: 20px auto;
+    /* position: sticky;
+    top: 0; */
+
+}
+
+#searchInput {
+    flex: 1;
+    padding: 8px;
+}
+
+#searchButton {
+    padding: 8px 12px;
+    background-color:#FFBE98 ;
+    color: white;
+    border-radius: 1px;
+    cursor: pointer;
+}
+
+.groupname{
+    color: #414141;
+    margin: 60px 0px;
+    font-size: 24px;
+    text-align: center;
+}
