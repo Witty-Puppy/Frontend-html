@@ -2,6 +2,7 @@
     width: 100%;
     display: grid;
     grid-column: auto;
+    min-width: 1300px;
 }
 
 .project_header {
