@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>demo</title>
+    <link rel="stylesheet" as="style" crossorigin
+          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"/>
+    <link rel="stylesheet" href="/css/project/boards_main_layout.css"><!--body와 .main용-->
+    <link rel="stylesheet" href="/css/project/boards_section.css"><!--section 용-->
+</head>
+<body>
+<div class="main">
+    <!--sidemenu-->
+    <th:block th:include="/layouts/sidemenu"/>
+    <!--sidemenu-->
+    <!--section-->
+    <section class="project_boards_section">
+        <div class="project_boards_header">
+            <div>&lt;</div>
+            <div class="project_boards_title">프로젝트 게시판</div>
+        </div>
+        <table class="project_boards_body">
+            <tr>
+                <td class="project_boards_element_1">
+                    <table>
+                        <tr>
+                            <td class="project_admin_title">
+                                <div>프로젝트 관리자</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="project_admin_info_wrap">
+                                <div class="project_admin_info">
+                                    <div class="project_admin_img_and_name">
+                                        <img src="" alt="관리자사진">
+                                        <div>OOO</div>
+                                    </div>
+                                    <div class="project_admin_dept_and_position">
+                                        <div>개발본부</div>
+                                        <div>팀장</div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td rowspan="3" class="project_boards_element_2">
+                    <table>
+
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="project_boards_element_3">
+                    <table>
+                        <tr class="project_boards_element_3_row_1">
+                            <th>
+                                제목
+                            </th>
+                            <td>
+                                <input type="text" placeholder="제목부분">
+                            </td>
+                        </tr>
+                        <tr class="project_boards_element_3_row_2">
+                            <th>
+                                <div>설명
+                                </div>
+                            </th>
+                            <td>
+                                <textarea placeholder="설명부분"></textarea>
+                            </td>
+                        </tr>
+                        <tr class="project_boards_element_3_row_3">
+                            <th>
+                                마감기한
+                            </th>
+                            <td>
+                                <input type="date">
+                            </td>
+                        </tr>
+                        <tr class="project_boards_element_3_row_4">
+                            <th>
+                                잠금여부
+                            </th>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                        </tr>
+                        <tr class="project_boards_element_3_row_5">
+                            <th>
+                                진행도
+                            </th>
+                            <td>
+                                <span>
+                                    프로젝트 생성
+                                </span>
+                            </td>
+                        </tr>
+                    </table>
+                    <input class="project_boards_info_modify" type="button" value="수정하기"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="project_boards_element_4">
+                    <table>
+                        <tr>
+                            <td>
+                                <span>프로젝트 참여자</span>
+                                <input type="button" value="초대하기">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="text">
+                                <span>
+                                    <input type="button" value="검색">
+                                    <img src="" alt="검색이미지">
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <img src="" alt="멤버사진">
+                                        <div>OOO</div>
+                                        <div>
+                                            <div>개발본부</div>
+                                            <div>팀장</div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </section>
+    <!--section-->
+</div>
+</body>
+</html>

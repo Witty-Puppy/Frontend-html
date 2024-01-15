@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>group</title>
+  <link rel="stylesheet" href="/css/group/groupchart.css">
+  <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.11/themes/default/style.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.11/jstree.min.js"></script>
+
+
+
+</head>
+<body>
+
+<div class="groupname" >
+  <p class="groupname2" >&lt;조직&gt;</p>
+</div>
+
+<div class="group-content">
+  <!-- 조직도 내용 -->
+
+  <div class="groupchart">
+
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="부서명 or 부서원을 입력하세요">
+      <button id="searchButton">검색</button>
+
+    </div>
+
+          <div id = org-chart-box>
+            <div id="org-chart">
+              <!-- 조직도 트리뷰 들어갈 자리 -->
+            </div>
+          </div>
+
+  </div>
+
+</div>
+
+
+
+<script src="/js/group/groupchart.js"></script>
+</body>
+</html>

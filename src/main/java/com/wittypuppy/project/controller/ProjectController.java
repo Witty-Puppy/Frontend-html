@@ -13,5 +13,19 @@ public class ProjectController {
         return "project/project_main";
     }
 
+    @GetMapping("/create")
+    public String projectCreate() {
+        return "project/project_create";
+    }
 
+    @GetMapping("/boards")
+    public String projectBoard() {
+        // 이 부분에 오른쪽 마우스 버튼 모달 기능도 추가되도록.
+        return "project/project_boards";
+    }
+
+    @GetMapping("/boards/invite")
+    public String projectBoardInvite() {
+        return "project/project_boards_invite";
+    }
 }

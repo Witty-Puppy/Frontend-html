@@ -1,0 +1,79 @@
+.sidemenu2 {
+    width: 280px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    color: #606060;
+    background-color: #F5F5F5;
+}
+
+.sidemenu2_title {
+    color: #414141;
+    margin: 60px 0px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.group_section{
+    width: 100%;
+    display: grid;
+    grid-column: auto;
+}
+
+.main-content{
+    height:1080px;
+    text-align: center;
+}
+
+.content-box{
+    height: 100px;
+
+}
+
+.group-table{
+    margin: 0 auto;
+    width: 90%;
+    height: 100%;
+    /*background-color: #dddddd;*/
+    text-align: center;
+}
+
+.group-table2 {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.group-table2 th, .group-table2 td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+}
+
+.group-table2 th {
+    background-color: #f2f2f2;
+}
+
+.group-table2 tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+
+/*페이징 처리 css*/
+.group-footer {
+    /*display: flex;*/
+    justify-content: center;
+    gap: 10px;
+    height: 20px;
+
+}
+
+.group-footer > input[type=button] {
+    border-radius: 2px;
+    font-size: 14px;
+    border: 1px solid #d9d9d9;
+    background: white;
+    cursor: pointer;
+}
+
+.group-footer > input[type=button]:hover {
+    background: #d9d9d9;
+}

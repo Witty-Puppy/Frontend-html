@@ -1,0 +1,11 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Pretendard;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 326px 245px auto;
+    width: 100%;
+}
