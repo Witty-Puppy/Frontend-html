@@ -28,4 +28,14 @@ public class ProjectController {
     public String projectBoardInvite() {
         return "project/project_boards_invite";
     }
+
+    @GetMapping("/boards/detail")
+    public String projectBoardDetail() {
+        return "project/project_boards_detail";
+    }
+
+    @GetMapping("/boards/detail/invite")
+    public String projectBoardDetailInvite() {
+        return "project/project_boards_detail_invite";
+    }
 }
