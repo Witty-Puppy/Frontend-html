@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MyPage</title>
+    <link rel="stylesheet" as="style" crossorigin
+          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"/>
+
+    <link rel="stylesheet" href="/css/main_layout.css"> <!--body와 .main용-->
+    <link rel="stylesheet" href="/css/mypage/mypage.css"> <!--body와 .main용-->
+</head>
+<body>
+
+<div class="main">
+    <!--sidemenu-->
+    <th:block th:include="/layouts/sidemenu"/>
+    <!--sidemenu-->
+
+    <!--sidemenu2-->
+    <div class="sidemenu2">
+        <div class="mypage_name" >
+            <div class="mypage_name2" >&lt;마이페이지&gt;</div>
+                 <ul>
+                     <li>
+                         <div>내 정보</div>
+                     </li>
+                     <li>
+                         <div>비밀번호 변경</div>
+                     </li>
+                     <li>
+                         <div>휴가정보</div>
+                     </li>
+                 </ul>
+             </div>
+
+        </div>
+
+    <!--sidemenu2-->
+
+    <section class="mypage_section">
+
+        <div class="main-content">
+
+            <div class="mypage_info">
+                <img src="/images/profile_example/ellipse_2.png" height="150px" width="150px" alt="프로필 이미지">
+                <p>홍길동</p>
+                <div class="mypage_info2">
+
+                    <div>
+                        <h3>지각</h3>
+                        <p id="late_count">3</p>
+                    </div>
+
+                    <div>
+                        <h3>연차</h3>
+                        <p id="vacation_count">3</p>
+                    </div>
+
+                    <div>
+                        <h3>부서</h3>
+                        <p id="dept_name">개발1팀</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="myinfo_update">
+
+            <div class="myinfo_chart">
+            <div class="myinfotext"  >&lt;내 정보&gt;</div>
+
+                <h2>이름</h2>
+                <input type="text" value="홍길동" readonly >
+
+                <h2>부서</h2>
+                <input type="text" value="계발1팀" readonly >
+
+                <h2>생년월일</h2>
+                <input type="text" value="2000-1-1" readonly >
+
+                <h2>전화번호</h2>
+                <input type="text" value="01033333333">
+
+                <h2>이메일</h2>
+                <input type="text" value="hongfildong12@gmail.com">
+
+                <h2>주소</h2>
+                <input type="text" value="종로구 하이미디어">
+
+        <br>
+                <div class="update_btn">
+                    <button class="update_btn2">수정하기</button>
+                </div>
+            </div>
+        </div>
+
+
+
+    </section>
+
+</div>
+
+</body>
+</html>

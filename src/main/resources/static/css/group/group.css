@@ -7,12 +7,12 @@
     background-color: #F5F5F5;
 }
 
-.sidemenu2_title {
-    color: #414141;
-    margin: 60px 0px;
-    font-size: 24px;
-    text-align: center;
-}
+/*.sidemenu2_title {*/
+/*    color: #414141;*/
+/*    margin: 60px 0px;*/
+/*    font-size: 24px;*/
+/*    text-align: center;*/
+/*}*/
 
 .group_section{
     width: 100%;
@@ -21,7 +21,7 @@
 }
 
 .main-content{
-    height:1080px;
+    height:950px;
     text-align: center;
 }
 
