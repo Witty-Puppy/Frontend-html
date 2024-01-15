@@ -239,25 +239,26 @@ body {
     font-size: 25px;
 }
 
-
-table{
-    position: absolute;
-    top: 270px;
-    font-size: 16px;
+.list-commute-area{
+    position: relative;
+    top: 190px;
+    left: 50px;
     width: 1200px;
-    left: 60px;
-    border-collapse: collapse; /* 테이블 셀 간의 경계를 합칩니다. */
 }
 
-th, td {
+.list-commute-detail td {
     border-bottom: 1px solid #606060;
     padding: 20px; /* 셀 내부 여백을 지정합니다. */
     text-align: left; /* 텍스트를 왼쪽 정렬합니다. */
     font-size: 16px;
 }
 
-
-
+.list-commute-detail tr {
+    border-bottom: 1px solid #606060;
+    padding: 20px; /* 셀 내부 여백을 지정합니다. */
+    text-align: left; /* 텍스트를 왼쪽 정렬합니다. */
+    font-size: 16px;
+}
 
 
 

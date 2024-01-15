@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>내 신청 문서 반려</title>
-    <link rel="stylesheet" href="/css/rejectPayment.css">
+    <link rel="stylesheet" href="/css/attendance/rejectPayment.css">
 </head>
 <body>
     <div class="main">
@@ -16,34 +16,35 @@
             <div class="bar"></div>
             <div class="filter-area">
                 <div class="box-area">
-                    <a href="" class="waiting-box"><div>대기</div></a>
-                    <a href="" class="approval-box"><div>승인</div></a>
-                    <a href="" class="reject-box"><div>반려</div></a>
+                    <a th:href="@{/attend/my-waiting}" class="waiting-box"><div>대기</div></a>
+                    <a th:href="@{/attend/my-approval}" class="approval-box"><div>승인</div></a>
+                    <a th:href="@{/attend/my-reject}" class="reject-box"><div>반려</div></a>
                 </div>
 
                 <div class="bar2"></div>
             </div>
 
-            <table >
-                <tr style="background-color: #F5F5F5;" >
-                    <td>문서번호</td>
-                    <td>신청기간</td>
-                    <td>종류</td>
-                    <td>소속</td>
-                    <td>결재일시</td>
-                </tr>
-                <tr>
-                    <td>휴가-202301-00002</td>
-                    <td>2023-01-05(금)~2023-01-05(금)</td>
-                    <td>연차-오후 반차</td>
-                    <td>마케팅팀</td>
-                    <td >
-                        01-02 10:12
-                        <button onclick="openPopup()">상세보기</button>
-                    </td>
-                </tr>
-
-            </table>
+            <div class="list-commute-area">
+                <table style="border-collapse: collapse; font-size: 16px; width: 1200px;">
+                    <tr class="list-commute-detail" style="background-color: #F5F5F5;" >
+                        <td class="list-commute-detail">문서번호</td>
+                        <td class="list-commute-detail">신청기간</td>
+                        <td class="list-commute-detail">종류</td>
+                        <td class="list-commute-detail">소속</td>
+                        <td class="list-commute-detail">결재일시</td>
+                    </tr>
+                    <tr class="list-commute-detail">
+                        <td class="list-commute-detail">휴가-202301-00002</td>
+                        <td class="list-commute-detail">2023-01-05(금)~2023-01-05(금)</td>
+                        <td class="list-commute-detail">연차-오후 반차</td>
+                        <td class="list-commute-detail">마케팅팀</td>
+                        <td class="list-commute-detail">
+                            01-02 10:12
+                            <button onclick="openPopup()">상세보기</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
 
             <!-- 페이징 -->
             <div class="paging-po"> << < 1  2  3  4  5 > >></div>

@@ -111,17 +111,21 @@ body {
     font-size: 16px;
 }
 
-table {
+.list-commute-area{
     position: relative;
     top: 190px;
-    font-size: 16px;
-    width: 1200px; 
-    left: px;
-    border-collapse: collapse; /* 테이블 셀 간의 경계를 합칩니다. */
-
+    left: 50px;
+    width: 1200px;
 }
 
-th, td {
+.list-commute-detail td {
+    border-bottom: 1px solid #606060;
+    padding: 20px; /* 셀 내부 여백을 지정합니다. */
+    text-align: left; /* 텍스트를 왼쪽 정렬합니다. */
+    font-size: 16px;
+}
+
+.list-commute-detail tr {
     border-bottom: 1px solid #606060;
     padding: 20px; /* 셀 내부 여백을 지정합니다. */
     text-align: left; /* 텍스트를 왼쪽 정렬합니다. */
