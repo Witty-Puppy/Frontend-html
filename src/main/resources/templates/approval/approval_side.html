@@ -1,0 +1,97 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Approval</title>
+    <link rel="stylesheet" as="style" crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/approval/approval_side.css">
+    <script src="/js/approval/approval_side.js" defer></script>
+    <style>
+      body {background: #E5E5E5; }
+    </style>
+
+  </head>
+
+  <body>
+  <div class="approval_sidemenu">
+    <div class="approval_sidemenu_on">
+      <div class="title">전자 결재</div>
+      <div class="writing_button">
+        <div class="writing_text">기안서 작성</div>
+      </div>
+
+      <div class=status>
+        <div class="processing">
+          <span class="processing_count">2</span>
+          <span class="processing_title">결재 진행</span>
+        </div>
+
+        <div class="count_title">
+          <span class="on_count">1</span>          
+          <span class="on_title">결재 대기</span>
+        </div>
+      </div>
+    </div>
+      <div class=inbox>
+        <div class="inbox_title_section">
+          <img class="inbox_drop_down" src="/images/approval/opened_dropdown.png"/>
+          <div class="inbox_title">결재 상신함</div>
+        </div>
+        <div class="inbox_menu_section">
+          <div class="on_process">
+            <span class="inbox_text">결재 진행함</span>
+          </div>
+          <div class="completed">
+            <span class="inbox_text">결재 완료함</span>
+          </div>
+          <div class="rejected">
+            <span class="inbox_text">반려 문서함</span>
+          </div>
+          <div class="retrieved">
+            <span class="inbox_text">회수 문서함</span>
+          </div>
+          <div class="saved">
+            <span class="inbox_text">임시 저장</span>
+          </div>
+        </div>
+      </div>
+
+      <div class=outbox>
+        <div class="outbox_title_section">
+          <img class="outbox_drop_down" src="/images/approval/opened_dropdown.png"/>
+          <span  class="outbox_title">결재 수신함</span>
+        </div>
+        <div class="outbox_menu_section">
+          <div class="awating">
+            <span class="outbox_text">결재 대기함</span>
+          </div>
+          <div class="out_completed">
+            <span class="outbox_text">결재 완료함</span>
+          </div>
+          <div class="represent">
+            <span class="outbox_text">대리 결재</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class=view>
+        <div  class="view_title_section">
+          <img class="view_drop_down" src="/images/approval/opened_dropdown.png"/>
+          <span class="view_title">열람함</span>
+        </div>
+        <div class="view_menu_section">
+          <div class="view_menu">
+            <span class="view_text">열람함</span>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="new">N</div> -->
+
+  </div>
+  <script>
+  </script>
+  </body>
+</html>
