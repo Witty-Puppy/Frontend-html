@@ -22,5 +22,11 @@ public class MyPageController {
         return "mypage/mypageVacation";
     }
 
+    @GetMapping("/mypagealarm")
+    public String mypageAlarm(){
+        return "mypage/mypageAlarm";
+    }
+
+
 
 }

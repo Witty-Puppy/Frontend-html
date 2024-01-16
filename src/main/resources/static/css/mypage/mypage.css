@@ -126,7 +126,8 @@
 }
 
 .myinfotext{
-    margin-top: 100px;
+    /*margin-top: 50px;*/
+    margin-bottom: 50px;
     display: flex;
     width: 100px;
     height: 50px;

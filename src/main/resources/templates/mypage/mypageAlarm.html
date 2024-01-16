@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MyPageVacation</title>
+    <link rel="stylesheet" as="style" crossorigin
+          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"/>
+
+    <link rel="stylesheet" href="/css/main_layout.css"> <!--body와 .main용-->
+    <link rel="stylesheet" href="/css/mypage/mypageVacation.css"> <!--body와 .main용-->
+</head>
+<body>
+
+<div class="main">
+    <!--sidemenu-->
+    <th:block th:include="/layouts/sidemenu"/>
+    <!--sidemenu-->
+
+    <!--sidemenu2-->
+    <div class="sidemenu2">
+        <div class="mypage_name" >
+            <div class="mypage_name2" >&lt;마이페이지&gt;</div>
+            <ul>
+                <li>
+                    <div>내 정보</div>
+                </li>
+                <li>
+                    <div>비밀번호 변경</div>
+                </li>
+                <li>
+                    <div>휴가정보</div>
+                </li>
+                <li>
+                    <div>알림내역</div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!--sidemenu2-->
+
+    <section class="mypage_section">
+
+        <div class="main-content">
+
+            <div class="mypage_info">
+                <img src="/images/profile_example/ellipse_2.png" height="150px" width="150px" alt="프로필 이미지">
+                <p>홍길동</p>
+                <div class="mypage_info2">
+
+                    <div>
+                        <h3>지각</h3>
+                        <p id="late_count">3</p>
+                    </div>
+
+                    <div>
+                        <h3>연차</h3>
+                        <p id="vacation_count">3</p>
+                    </div>
+
+                    <div>
+                        <h3>부서</h3>
+                        <p id="dept_name">개발1팀</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="myinfo_update">
+
+
+            <div class="group-table">
+                <div class="myinfotext"  >&lt;알림내역&gt;</div>
+                <div class="table_height">
+                    <table class="group-table2">
+                        <thead>
+                        <tr>
+                            <th>아이디</th>
+                            <th>이름</th>
+                            <th>이메일</th>
+                            <th>부서</th>
+                            <th>위치</th>
+                            <th>시간</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>홍길동</td>
+                            <td>wittywitty123</td>
+                            <td>영업부</td>
+                            <td>12/1-12/23</td>
+                            <td>Y</td>
+                            <td>Y</td>
+                        </tr>
+                        <tr>
+                            <td>홍길동</td>
+                            <td>wittywitty123</td>
+                            <td>영업부</td>
+                            <td>12/1-12/23</td>
+                            <td>Y</td>
+                            <td>Y</td>
+                        </tr>
+
+
+                        <!-- 실제 데이터는 서버에서 가져와서 반복적으로 표시해야 함 -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </section>
+
+</div>
+
+</body>
+</html>

@@ -22,19 +22,18 @@
 
 .main-content{
     height:950px;
+    /*width: 100%;*/
     text-align: center;
 }
 
 .content-box{
     height: 100px;
-
 }
 
 .group-table{
     margin: 0 auto;
     width: 90%;
     height: 100%;
-    /*background-color: #dddddd;*/
     text-align: center;
 }
 
