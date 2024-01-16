@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내 근태 현황</title>
+    <link rel="stylesheet" href="/css/attendance/commuteMain.css">
+
+
+
+</head>
+<body>
+    <div class="main">
+        <th:block th:include="/layouts/sidemenu"/>
+        <th:block th:include="/attendance/sidemenu2"/>
+
+        <div class="main2">
+                <span class="main-title">내 근태 현황</span>
+                <div class="bar"></div>
+
+                <div class="box">
+                    <div class="vacation-box">
+                        <span class="vacation-leave">남은 연차</span>
+                        <span class="vacation-image"><img src="/images/AttendanceManagement/vacation.png"></span>
+                        <div class="vacation">3</div>
+                        <span class="vacation-day">일</span>
+                        <a th:href="@{''}" class="vacation-apply">휴가 신청하기 ></a>
+                    </div>
+
+                    <div class="payment-box">
+                        <span class="payment-leave">결재 대기</span>
+                        <span class="payment-image"><img src="/images/AttendanceManagement/payment.png"></span>
+                        <div class="payment">3</div>
+                        <span class="payment-count">건</span>
+                        <a th:href="@{''}" class="payment-check">결제하기 ></a>
+                    </div>
+
+                    <div class="work-box">
+                        <span class="work-title">근태 신청</span>
+                        <span class="work-image"><img src="/images/AttendanceManagement/application.png"></span>
+                        <a th:href="@{''}" class="work-apply">근태 신청하기 ></a>
+                    </div>
+
+                </div>
+
+                <div class="today-Info-box">
+                    <div class="today-Info">
+                        <span class="today">오늘</span>
+                        <span class="today-time" id="currentDateTime"></span>
+                        <hr>
+                        <div class="current-info">
+                            <span class="userN">ooo님, 안녕하세요.</span><br>
+                            <span class="current">00 했습니다.</span>
+                        </div>
+                        <div class="time-info">
+                            <span class="workTime">출근: 00 : 00 : 00</span><br>
+                            <span class="leaveTime">퇴근: 00 : 00 : 00</span>
+                        </div>
+                        <button id="workCheckButton" class="work-check" onclick="updateTime('work')">출근</button>
+                        <button id="leaveCheckButton" class="leave-check" onclick="updateTime('leave')">퇴근</button>
+                        <span class="worked">근무시간</span><br>
+                        <span class="workedHour">00h 00m</span>
+
+                    </div>
+                </div>
+
+                <div class="calender-area">
+                    <div class="calender-title">
+                        <button class="pre"> < </button>
+                        <span class="now">2023 - 12</span>
+                        <button class="nex"> > </button>
+                    </div>
+                    <select class="calenderOption" >
+                        <option value="vacation">휴가</option>
+                        <option value="outside">외근</option>
+                        <option value="extension">연장근로</option>
+                        <option value="business">출장</option>
+                        <option value="home">재택근무</option>
+                    </select>
+                    <div class="calender"></div>
+
+                </div>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        //현재 시간 
+        // function updateDateTime() {
+        //     var now = new Date();
+        //     var year = now.getFullYear();
+        //     var month = now.getMonth() + 1; // 월은 0부터 시작하므로 1을 더해줍니다.
+        //     var day = now.getDate();
+        //     var dayOfWeek = now.toLocaleDateString('ko-KR', { weekday: 'narrow' }); // 한국어로 요일을 표시
+        //     var hours = now.getHours();
+        //     var minutes = now.getMinutes();
+        //     var seconds = now.getSeconds();
+            
+        //     var formattedDateTime = year + '/' + month + '/' + day + ' (' + dayOfWeek + ') ' + hours + ':' + minutes + ':' + seconds;
+            
+        //     document.getElementById('currentDateTime').innerText = formattedDateTime;
+        // }
+    
+        //  // 페이지 로드 시에 초기화
+        // updateDateTime();
+    
+        //  // 5초마다 업데이트
+        // setInterval(updateDateTime, 5000);
+
+
+
+        //출퇴근 버튼 누를 때
+        var workButtonClicked = false;  // "출근" 버튼이 클릭되었는지 여부를 나타내는 변수
+        var leaveButtonClicked = false;  // "퇴근" 버튼이 클릭되었는지 여부를 나타내는 변수
+        var startTime;  // 근무 시작 시간을 저장하는 변수
+        var totalWorkedTime = 0;  // 총 근무 시간을 저장하는 변수
+
+        function updateTime(type) {
+            var currentTime = new Date();
+            var hours = currentTime.getHours();
+            var minutes = currentTime.getMinutes();
+            var seconds = currentTime.getSeconds();
+
+            if (type === 'work' && !workButtonClicked) {
+                var workTimeSpan = document.querySelector('.workTime');
+                workTimeSpan.textContent = '출근: ' + formatTime(hours) + ' : ' + formatTime(minutes) + ' : ' + formatTime(seconds);
+                workButtonClicked = true;
+                startTime = currentTime;  // 출근할 때 현재 시간을 근무 시작 시간으로 저장
+                updateWorkedTime();  // 근무 시간을 업데이트하기 시작
+            } else if (type === 'leave' && !leaveButtonClicked) {
+                var leaveTimeSpan = document.querySelector('.leaveTime');
+                leaveTimeSpan.textContent = '퇴근: ' + formatTime(hours) + ' : ' + formatTime(minutes) + ' : ' + formatTime(seconds);
+                leaveButtonClicked = true;
+                totalWorkedTime += currentTime - startTime;  // 퇴근할 때 경과된 시간을 총 근무 시간에 더함
+            }
+        }
+
+        function updateWorkedTime() {
+            if (workButtonClicked && !leaveButtonClicked) {
+                var currentTime = new Date();
+                var elapsedTime = currentTime - startTime + totalWorkedTime;  // 경과된 시간에 총 근무 시간을 더함
+                var hours = Math.floor(elapsedTime / 3600000);
+                var minutes = Math.floor((elapsedTime % 3600000) / 60000);
+
+                var workedHourSpan = document.querySelector('.workedHour');
+                workedHourSpan.textContent = formatTime(hours) + 'h ' + formatTime(minutes) + 'm';
+
+                setTimeout(updateWorkedTime, 1000);  // 1초마다 근무 시간을 업데이트
+            }
+        }
+
+        function formatTime(time) {
+            return time < 10 ? '0' + time : time;
+        }
+
+    
+
+    </script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,231 @@
+[class^="project_boards_element"] {
+    box-sizing: border-box;
+    border: 1px solid black;
+    padding: 0;
+}
+
+/*삭제예정*/
+
+.project_boards_section {
+    width: 100%;
+    display: grid;
+    grid-template-rows: 100px auto;
+    gap: 15px;
+    box-sizing: border-box;
+    background-color: #F5F5F5;
+    min-width: 1500px;
+}
+
+.project_boards_header {
+    display: flex;
+    padding-left: 30px;
+    padding-top: 45px;
+    font-size: 30px;
+    align-items: center;
+}
+
+.project_boards_title {
+    font-size: 30px;
+    padding-left: 25px;
+}
+
+.project_boards_body {
+    width: 100%;
+    height: 100%;
+    /*padding: 20px;*/
+    border-spacing: 20px;
+}
+
+.project_boards_element_1 {
+    width: 365px;
+    position: relative;
+    height: 450px;
+    padding: 10px;
+}
+
+.project_boards_element_1 > table {
+    width: 100%;
+    height: 100%;
+    border-spacing: 10px;
+}
+
+.project_boards_element_1 th {
+    text-align: start;
+    font-size: 20px;
+}
+
+.project_boards_element_1_row_1 td > input {
+    height: 100%;
+    width: 100%;
+    border: 1px solid #d9d9d9;
+    color: #606060;
+    font-size: 16px;
+}
+
+.project_boards_element_1_row_2 {
+    height: 60%;
+}
+
+.project_boards_element_1_row_2 th > div {
+    height: 100%;
+}
+
+.project_boards_element_1_row_2 td > textarea {
+    height: 100%;
+    width: 100%;
+    border: 1px solid #d9d9d9;
+    color: #606060;
+    font-size: 16px;
+    resize: none;
+}
+
+.project_boards_element_1_row_3 td > input {
+    height: 100%;
+    width: 100%;
+    border: 1px solid #d9d9d9;
+    color: #606060;
+    font-size: 16px;
+}
+
+
+.project_boards_element_1_row_4 select {
+    /*color: red;*/
+    /*font-size: 20px;*/
+}
+
+.project_boards_info_modify {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    padding: 8px 12px;
+    font-size: 20px;
+    color: white;
+    background-color: #FA9A85;
+    border: 0;
+    border-radius: 10px;
+}
+
+.project_boards_element_3 {
+    vertical-align: top;
+}
+
+.project_boards_element_3 > div {
+    display: grid;
+    padding: 10px;
+    gap: 5px;
+    grid-template-rows: 43px 30px auto;
+}
+
+.project_boards_invite {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project_boards_invite > span {
+    font-size: 30px;
+    line-height: 30px;
+    color: #606060;
+}
+
+.project_boards_invite > input {
+    font-size: 20px;
+    border: 0;
+    border-radius: 10px;
+    bottom: 12px;
+    padding: 8px 12px;
+    font-size: 20px;
+    color: white;
+    background-color: #FA9A85;
+}
+
+.project_boards_member_search {
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+
+.project_boards_member_search > input {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #F0F0F0;
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 30px;
+    padding: 0;
+    margin: 0;
+}
+
+.project_boards_member_search_button {
+    position: absolute;
+    box-sizing: border-box;
+    top: 0;
+    right: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 1px solid black;
+    height: 30px;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    background-color: #FA9A85;
+}
+
+.project_boards_member_search_button > .hidden_input {
+    display: none;
+    pointer-events: none;
+}
+
+.project_boards_member_search_button > span {
+    padding-left: 5px;
+    color: white;
+    user-select: none;
+}
+
+.project_boards_member_search_button > img {
+    padding: 0px 5px;
+}
+
+.project_boards_member_list {
+    overflow-y: auto;
+    max-height: 260px;
+}
+
+.project_boards_member_list > table {
+    width: 100%;
+}
+
+.project_boards_member_list td {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2px 5px;
+    padding-left: 0;
+}
+
+.member_list_img_and_name {
+    display: flex;
+    align-items: center;
+}
+
+.member_list_img_and_name > img {
+    width: 50px;
+}
+
+.member_list_img_and_name > span {
+    padding-left: 20px;
+    font-size: 16px;
+    color: #606060;
+}
+
+.member_list_dept_and_position {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.project_boards_element_2 {
+    padding: 30px 20px;
+}
