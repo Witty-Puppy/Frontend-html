@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Pretendard;
+}
+
+.messenger_wrap {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.messenger_wrap > img {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.messenger_main {
+    background-color: white;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 400px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-rows: 90px 0px 610px;
+}
+
+.messenger_header {
+    box-sizing: border-box;
+}
+
+.messenger_controls_section {
+    background-color: #fa9a85;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 4px;
+}
+
+.messenger_controls_section > img {
+    width: 24px;
+    height: 24px;
+}
+
+.messenger_sub_header {
+    padding: 16px 20px 0px 20px;
+    font-size: 24px;
+}
+
+.messenger_main > hr {
+    width: 90%;
+    justify-self: center;
+}
+
+.messenger_body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 30px;
+}
+
+.messenger_body_1 {
+    font-size: 16px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.messenger_body_2 {
+    font-size: 16px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.messenger_body_2 > .theme_wrap {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, 200px);
+    gap: 10px;
+}
+
+.messenger_body_2 .theme_1 {
+    background-color: red;
+}
+
+.messenger_body_2 .theme_2 {
+    background-color: blue;
+}
+
+.messenger_body_2 .theme_3 {
+    background-color: black;
+}
+
+.messenger_body_2 .theme_4 {
+    background-color: yellow;
+}
+
+.messenger_body_2 > .apply {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    padding: 8px 12px;
+    font-size: 20px;
+    color: white;
+    background-color: #fa9a85;
+    border: 0;
+    border-radius: 10px;
+}
+
+.theme_wrap div {
+    position: relative;
+    border-radius: 5px;
+}
+
+.theme_wrap input {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    scale: 2;
+}

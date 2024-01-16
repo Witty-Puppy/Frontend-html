@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Pretendard;
+}
+
+.messenger_wrap {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.messenger_wrap > img {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
