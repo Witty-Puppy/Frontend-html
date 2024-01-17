@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/approval/form_list.css">
+    <title>form list</title>
+    <link rel="stylesheet" href="/css/main_layout.css"><!--body와 .main용-->
+    <link rel="stylesheet" href="/css/approval/approval_side.css"><!--body와 .main용-->
+
+    <link rel="stylesheet" as="style" crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"/>
+</head>
+<body>
+<div class="main">
+    <th:block th:include="/layouts/sidemenu"/>
+    <th:block th:include="/approval/approval_side.html"/>
+    <section class="list_section">
+    <div class="new_form_title_section">
+        <div class="new_form_title_box"></div>
+        <span class="new_form_title">기안서 작성</span>
+    </div>
+
+    <div class="form_content">
+        <div class="form_search_and_list">
+            <div class="form_search_section">
+                <input type="text" class="form_search" placeholder="양식명을 검색해주세요.">
+                <img class="search_icon" src="/images/approval/search.png"/>
+            </div>
+
+            <div class="form_list_section">
+                <div class="form_list" onclick="selectForm(this)">
+                    <div class="selection_indicator"></div>
+                    <span class="form_list_title">휴가 신청서</span>
+                </div>
+                <div class="form_list" onclick="selectForm(this)">
+                    <div class="selection_indicator"></div>
+                    <span class="form_list_title">연장근로 신청서</span>
+                </div>
+                <div class="form_list" onclick="selectForm(this)">
+                    <div class="selection_indicator"></div>
+                    <span class="form_list_title">외근 신청서</span>
+                </div>
+                <div class="form_list" onclick="selectForm(this)">
+                    <div class="selection_indicator"></div>
+                    <span class="form_list_title">출장 신청서</span>
+                </div>
+                <div class="form_list" onclick="selectForm(this)">
+                    <div class="selection_indicator"></div>
+                    <span class="form_list_title">재택근무 신청서</span>
+                </div>
+                <div class="form_list" onclick="selectForm(this)">
+                    <div class="selection_indicator"></div>
+                    <span class="form_list_title">SW 사용 신청서</span>
+                </div>
+                <div class="form_list" onclick="selectForm(this)">
+                    <div class="selection_indicator"></div>
+                    <span class="form_list_title">예산 신청서</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form_preview_section">
+            <div class="writing_section">
+                <div class="list_writing_button">
+                    <span class="list_writing_text">작성하기</span>
+                </div>
+            </div>
+
+            <div class="preview_section">
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+    function selectForm(element) {
+    // Remove 'selected' class from all form_list items
+    const formListItems = document.querySelectorAll('.form_list');
+    formListItems.forEach(item => item.classList.remove('selected'));
+
+    // Add 'selected' class to the clicked form_list item
+    element.classList.add('selected');
+
+    // Hide all selection_indicators
+    const selectionIndicators = document.querySelectorAll('.selection_indicator');
+    selectionIndicators.forEach(indicator => indicator.style.display = 'none');
+
+    // Show the selection_indicator of the clicked form_list item
+    const selectionIndicator = element.querySelector('.selection_indicator');
+    selectionIndicator.style.display = 'block';
+    
+        // 미리보기 섹션 업데이트
+        const previewSection = document.querySelector('.preview_section');
+    const selectedFormTitle = element.querySelector('.form_list_title').innerText;
+
+    // 양식에 따라 불러와야 하는 HTML 파일 경로 설정
+    const formFilePath = getFormFilePath(selectedFormTitle);
+
+    // Ajax를 사용하여 선택한 양식의 내용을 불러옴
+    fetch(formFilePath)
+        .then(response => response.text())
+        .then(data => {
+            // 불러온 HTML을 preview_section에 삽입
+            previewSection.innerHTML = data;
+        });
+    }
+
+    function getFormFilePath(formTitle) {
+    // 각 양식에 대한 파일 경로를 반환하는 함수
+    switch (formTitle) {
+        case '휴가 신청서':
+            return '/approval/on_leave_form';
+        default:
+            return '';
+    }
+}
+
+    </script>
+    </section>
+</div>
+</body>
+</html>
