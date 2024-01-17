@@ -88,7 +88,10 @@
 	font-size:20px;
 }
 .inbox {
-	width:100%;
+	position: relative;
+	top: 0;
+	left: 7px;
+	width:calc(100% - 14px);
 	height: 345px;
 }
 .inbox_title_section { 
@@ -130,8 +133,11 @@
 	font-size:18px;
 	margin-left: 25px;
 }
-.outbox { 
-	width:100%;
+.outbox {
+	position: relative;
+	top: 0;
+	left: 7px;
+	width:calc(100% - 14px);
 	height:225px;
 }
 .outbox_title_section { 
@@ -173,8 +179,11 @@
 	font-size:18px;
 	margin-left: 25px;
 }
-.view { 
-	width:100%;
+.view {
+	position: relative;
+	top: 0;
+	left: 7px;
+	width:calc(100% - 14px);
 	height:115px;
 }
 .view_title_section { 

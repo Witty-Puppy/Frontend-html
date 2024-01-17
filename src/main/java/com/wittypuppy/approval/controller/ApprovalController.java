@@ -10,7 +10,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class ApprovalController {
     @GetMapping("/form")
     public String projectMain() {
+        return "approval/form_list";
+    }
+    @GetMapping("/on_leave_form")
+    public String onLeaveForm() {
         return "approval/on_leave_form";
     }
-
 }
