@@ -79,6 +79,8 @@
 .form_content {
     display: flex;
     flex-direction: row;
+    background-color: #F5F5F5;
+    width: 1335px;
 }
 .writing_section {
     height: 70px;

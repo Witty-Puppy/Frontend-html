@@ -101,6 +101,7 @@
     align-items: center;
 	flex-direction: row;
     justify-content: center;
+	cursor: pointer;
 }
 .inbox_title { 
 	color:#606060;
@@ -147,6 +148,7 @@
     align-items: center;
 	flex-direction: row;
     justify-content: center;
+	cursor: pointer;
 }
 .outbox_title { 
 	color:#606060;
@@ -193,6 +195,7 @@
     align-items: center;
 	flex-direction: row;
     justify-content: center;
+	cursor: pointer;
 }
 .view_title { 
 	color:#606060;

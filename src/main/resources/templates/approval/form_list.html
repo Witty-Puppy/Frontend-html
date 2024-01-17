@@ -55,7 +55,7 @@
                 </div>
                 <div class="form_list" onclick="selectForm(this)">
                     <div class="selection_indicator"></div>
-                    <span class="form_list_title">예산 신청서</span>
+                    <span class="form_list_title">구매 품의서</span>
                 </div>
             </div>
         </div>
@@ -111,6 +111,18 @@
     switch (formTitle) {
         case '휴가 신청서':
             return '/approval/on_leave_form';
+        case '연장근로 신청서':
+            return '/approval/overtime_form';
+        case '외근 신청서':
+            return '/approval/away_form';
+        case '출장 신청서':
+            return '/approval/business_trip_form';
+        case '재택근무 신청서':
+            return '/approval/wfh_form';
+        case 'SW 사용 신청서':
+            return '/approval/sw_form';
+        case '구매 품의서':
+            return '/approval/sw_form';
         default:
             return '';
     }
