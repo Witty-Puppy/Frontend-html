@@ -23,7 +23,7 @@
 
                 <div class="bar2"></div>
             </div>
-            <a href="" class="approval">근태신청</a>
+            <div class="application"><a href="" >근태신청</a></div>
             <div class="list-commute-area">
                 <table style="border-collapse: collapse; font-size: 16px; width: 1200px;">
                     <tr class="list-commute-detail"style="background-color: #F5F5F5;" >
@@ -39,8 +39,8 @@
                         <td class="list-commute-detail">홍길동사원</td>
                         <td class="list-commute-detail">마케팅팀</td>
                         <td class="list-commute-detail">
-                            <button>철회</button>
-                            <button onclick="openPopup()">상세보기</button>
+                            <button id="withdrawal">철회</button>
+                            <button id="detail" th:onclick="openPopup()">상세보기</button>
                         </td>
                     </tr>
                 </table>
@@ -74,7 +74,12 @@
             document.getElementById('popup').style.display = 'none';
         }
 
+        //철회
+        var withdrawalButton = document.getElementById('withdrawal');
 
+        withdrawalButton.addEventListener('click', function() {
+            var confirmation = confirm('철회하겠습니까?');
+        });
 
     </script>
 

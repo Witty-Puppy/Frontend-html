@@ -24,7 +24,6 @@
                 <div class="bar2"></div>
             </div>
             <button class="approval">승인</button>
-            <!-- <button class="rejection">반려</button> -->
             <div class="list-commute-area">
                 <table style="border-collapse: collapse; font-size: 16px; width: 1200px;">
                     <tr class="list-commute-detail" style="background-color: #F5F5F5;" >
@@ -43,7 +42,20 @@
                         <td class="list-commute-detail">마케팅팀</td>
                         <td class="list-commute-detail">
                             <button >승인</button>
-                            <button>반려</button>
+                            <button th:onclick="openPopup()">반려</button>
+                            <button th:onclick="openPopup()">상세보기</button>
+                        </td>
+                    </tr>
+
+                    <tr class="list-commute-detail">
+                        <td class="list-commute-detail"><input type="checkbox"></td>
+                        <td class="list-commute-detail">2023-01-05(금)~2023-01-05(금)</td>
+                        <td class="list-commute-detail">연차-오후 반차</td>
+                        <td class="list-commute-detail">홍길동사원</td>
+                        <td class="list-commute-detail">마케팅팀</td>
+                        <td class="list-commute-detail">
+                            <button >승인</button>
+                            <button th:onclick="openPopup()">반려</button>
                             <button th:onclick="openPopup()">상세보기</button>
                         </td>
                     </tr>
