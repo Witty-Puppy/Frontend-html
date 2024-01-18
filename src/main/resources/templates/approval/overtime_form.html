@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/approval/overtime_form.css">
+    <title>on leave form</title>
+    <link rel="stylesheet" as="style" crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"/>
+</head>
+<body>
+    <section class="form_section">
+        <div class="form_body">
+            <div class="form_title_section">
+                <div class="form_title">연장근로 신청서</div>
+            </div>
+            <div class="form_table" style="display:table;">
+                <div style="display:table-row">
+                    <div class ="A" style="display:table-cell">제목</div>
+                    <div class ="B" style="display:table-cell">
+                        <input class="input_box" type="text">
+                    </div>
+                </div>
+
+                <div style="display:table-row">
+                    <div class ="A" style="display:table-cell">구분</div>
+                    <div class ="B" style="display:table-cell">
+                        <select id="type">
+                            <option value="">선택</option>
+                            <option value="overtime_day">연장근로</option>
+                            <option value="overtime_holiday">휴일근로</option>
+                          </select>
+      
+                    </div>
+                </div>
+
+                <div style="display:table-row">
+                    <div class ="A" style="display:table-cell">근무 일자</div>
+                    <div class ="B" style="display:table-cell">
+                        <input type="date" id="working_date"  class="inputbox">
+                    </div>
+                </div>
+
+                <div style="display:table-row">
+                    <div class ="A" style="display:table-cell">근무 시간</div>
+                    <div class ="B" style="display:table-cell">
+                        <input type="time" id="start-time"  class="inputbox">
+                        <label for="">~</label>    
+                        <input type="time" id="end-time"  class="inputbox">
+                        <label for="">, 총</label>
+                        <input class="total_overtime" type="text">
+                        <label for="">시간</label>
+                    </div>
+                </div>
+
+                <div style="display:table-row">
+                    <div class ="A" style="display:table-cell">업무 내용</div>
+                    <div class ="B" style="display:table-cell">
+                        <input class="input_box" type="text">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
