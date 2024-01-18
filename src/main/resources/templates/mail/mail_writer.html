@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/mail/mail_sidebar2.css"> <!--body와 .main용-->
+    <link rel="stylesheet" href="/css/mail/demo_section.css"> <!--body와 .main용-->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+</head>
+<body>
+<script>
+    // summernote
+    $(document).ready(function() {
+        $('.summernote').summernote({
+            width: 1250,
+            height: 500,
+        })
+    });
+</script>
+<th:block th:include="/layouts/sidemenu"/>
+<th:block th:include="/mail/mail_side"/>
+<section class="project_section">
+    <div class="project_header">
+        <div class="project_header_title">메일 쓰기</div>
+        <div class="project_input_wrap">
+        </div>
+    </div>
+    <div class="project_body">
+        <input style="width: 1240px; height: 30px; margin-bottom: 30px;" type="text" placeholder="제목을 입력하세요">
+        <input style="width: 1240px; height: 30px; margin-bottom: 30px;" type="text" placeholder="수신자를 입력하세요">
+        <div>&nbsp;&nbsp; 예약 전송하기&nbsp;&nbsp;&nbsp;&nbsp;</div><input style="width: 200px;" type="date">
+        <textarea class="summernote" name=""></textarea>
+    </div>
+    <div class="project_footer">
+        <button class="mail-send-button">메일 전송</button>
+    </div>
+</section>
+</body>
+</html>
