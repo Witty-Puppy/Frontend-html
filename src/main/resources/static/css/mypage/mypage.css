@@ -104,9 +104,12 @@
     margin-right: 30px; /* 각 항목 사이의 간격을 조절할 수 있습니다. */
 }
 
-/*.myinfo_update{*/
-/*    display: flex;*/
-/*}*/
+.mypage_info2 h3 {
+font-size: 25px;
+}
+.mypage_info2 p {
+font-size: 20px;
+}
 
 .myinfo_update {
     display: flex;
