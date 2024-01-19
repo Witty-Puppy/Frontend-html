@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>출퇴근내역</title>
+    <link rel="stylesheet" href="/css/attendance/teamCommute.css">
+</head>
+<body>
+    <div class="main">
+        <th:block th:include="/layouts/sidemenu"/>
+        <th:block th:include="/attendance/sidemenu2"/>
+
+        <div class="main2">
+            <span class="main-title">팀원 출퇴근 내역</span>
+            <div class="bar"></div>
+            <div class="month-filter-area">
+                <div class="monthFilter">
+                    <div class="calender-title2">
+                        <button class="pre" onclick="changeDate(-1)"> < </button>
+                        <span class="now" id="currentDate"></span>
+                        <button class="nex" onclick="changeDate(1)"> > </button>
+                    </div>
+
+                    <div class="list-commute-area">
+                        <table style="border-collapse: collapse; font-size: 16px; width: 1200px;">
+                            <tr class="list-commute-detail" style="background-color: #F5F5F5;" >
+                                <td class="list-commute-detail">사원명</td>
+                                <td class="list-commute-detail">날짜</td>
+                                <td class="list-commute-detail">출근 여부</td>
+                                <td class="list-commute-detail">퇴근 여부</td>
+                                <td class="list-commute-detail">근태 상태</td>
+                                <td class="list-commute-detail">근무 상태</td>
+                            </tr>
+                            <tr class="list-commute-detail">
+                                <td class="list-commute-detail">홍길동</td>
+                                <td class="list-commute-detail">12 - 24 (목)</td>
+                                <td class="list-commute-detail">Y</td>
+                                <td class="list-commute-detail">Y</td>
+                                <td class="list-commute-detail">지각,</td>
+                                <td class="list-commute-detail">연장근로</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <!-- 페이징 -->
+                    <div class="paging-po"> << < 1  2  3  4  5 > >></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 팝업 창 -->
+
+        <script>
+
+
+            // 현재 날짜 가져오기
+            var currentDate = new Date();
+            var currentYear = currentDate.getFullYear();
+            var currentMonth = currentDate.getMonth();
+            var currentDay = currentDate.getDate();
+
+            // 초기 달력 표시
+            showCalendar(currentYear, currentMonth);
+
+            function changeDate(offset) {
+                // 날짜 변경
+                currentDay += offset;
+
+                // 현재 달의 첫 날과 마지막 날을 가져오기
+                var firstDay = new Date(currentYear, currentMonth, 1);
+                var lastDay = new Date(currentYear, currentMonth + 1, 0);
+
+                // 날짜 범위 체크
+                if (currentDay < 1) {
+                    // 이전 달로 이동
+                    currentMonth--;
+                    if (currentMonth < 0) {
+                        currentMonth = 11;
+                        currentYear--;
+                    }
+                    lastDay = new Date(currentYear, currentMonth + 1, 0);
+                    currentDay = lastDay.getDate();
+                } else if (currentDay > lastDay.getDate()) {
+                    // 다음 달로 이동
+                    currentMonth++;
+                    if (currentMonth > 11) {
+                        currentMonth = 0;
+                        currentYear++;
+                    }
+                    currentDay = 1;
+                }
+
+                // 변경된 달력 표시
+                showCalendar(currentYear, currentMonth);
+            }
+
+            function showCalendar(year, month) {
+                var firstDay = new Date(year, month, 1);
+                var lastDay = new Date(year, month + 1, 0);
+
+                // 현재 날짜 표시
+                document.getElementById("currentDate").innerHTML = `${month + 1}/${currentDay}`;
+
+                // 이전에 선택한 날짜가 있다면 초기화
+                document.getElementById("selectedDate").innerHTML = "";
+
+            }
+
+
+
+        </script>
+</body>
+</html>

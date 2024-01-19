@@ -12,7 +12,7 @@
         <th:block th:include="/attendance/sidemenu2"/>
 
         <div class="main2">
-            <span class="main-title">내 출근 내역</span>
+            <span class="main-title">내 출퇴근 내역</span>
             <div class="bar"></div>
             <div class="month-filter-area">
                 <div class="monthFilter">
@@ -26,27 +26,27 @@
                             <div class="vacation">
                             <span class="vacation-image"><img src="/images/AttendanceManagement/vacation.png"></span>
                             <span class="vacation-tile">휴가</span>
-                            <div class="vacationCount">3</div>
+                            <div class="vacationCount" th:text="${''}">3</div>
                             </div>
                             <div class="outside">
                                 <span class="outside-image"><img src="/images/AttendanceManagement/outside.png"></span>
                                 <span class="outside-tile">외근</span>
-                                <div class="outsideCount">3</div>
+                                <div class="outsideCount" th:text="${''}">3</div>
                             </div>
                             <div class="extension">
                                 <span class="extension-image"><img src="/images/AttendanceManagement/extension.png"></span>
                                 <span class="extension-tile">연장근무</span>
-                                <div class="extensionCount">3</div>
+                                <div class="extensionCount" th:text="${''}">3</div>
                             </div>
                             <div class="business">
                                 <span class="business-image"><img src="/images/AttendanceManagement/business.png"></span>
                                 <span class="business-tile">출장</span>
-                                <div class="businessCount">3</div>
+                                <div class="businessCount" th:text="${''}">3</div>
                             </div>
                             <div class="home">
                                 <span class="home-image"><img src="/images/AttendanceManagement/home.png"></span>
                                 <span class="home-tile">재택근무</span>
-                                <div class="homeCount">3</div>
+                                <div class="homeCount" th:text="${''}">3</div>
                             </div>
                         </div>
                     </div>
@@ -80,28 +80,6 @@
     </div>
 
     <!-- 팝업 창 -->
-        <div id="overlay"></div>
-        <div id="popup">
-            <div id="close-btn" onclick="closePopup()">닫기</div>
-            <div class="apply-info">
-                <span class="apply-title">출퇴근 정정 신청</span>
-                <span class="applicant">신청인 : 서보혜</span>
-                <span class="applicantDay">날짜 : 00월 00일</span>
-                <span class="applicantWork">출근 시간 : 00 : 00 : 00 </span>
-                <span class="applicantHome">퇴근 시간 : 00 : 00 : 00 </span>
-                <span class="reason">사유</span>
-                <textarea  type="text" id="applicantReason" maxlength="99" rows="4" cols="50" oninput="countCharacters()"> </textarea>
-                <div id="charCount"></div>
-                <div class="approver-area">
-                    <span class="approver">결재자</span>
-                    <span class="approver-image"><img src=""></span> 
-                    <span class="approverName">아아본부장</span>
-                    <span class="approverdept">아아본부장</span>
-                </div>
-                <button class="apply-bnt" onclick="closePopup()" >신청 후 닫기</button>
-            </div>
-        </div>
-
 
         <script>
             function openPopup() {

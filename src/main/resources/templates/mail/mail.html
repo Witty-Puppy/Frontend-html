@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>demo</title>
+    <link rel="stylesheet" as="style" crossorigin
+          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"/>
+
+    <link rel="stylesheet" href="/css/mail/mail_sidebar2.css"> <!--body와 .main용-->
+    <link rel="stylesheet" href="/css/mail/demo_section.css"> <!--body와 .main용-->
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+    <style>
+
+        .boardList{
+            margin-left: 50px;
+            border-collapse: collapse;
+            color: #606060;
+        }
+
+        .boardList > thead{
+            border-top: 1px solid #A3A2A2;
+            border-bottom: 1px solid #A3A2A2;
+
+        }
+
+        .boardList > thead th{
+
+            font-weight: normal;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .boardList > tbody td{
+            padding-top: 20px;
+            padding-bottom: 10px;
+            cursor: pointer;
+        }
+        .boardList > tbody td:hover{
+            font-weight: bold;
+        }
+
+
+        .boardList > tbody td{
+            padding-right: 140px;
+        }
+
+        .boardList > td{
+            text-align: left;
+        }
+        .test{
+            margin-right: 40px;
+        }
+        .read{
+            color: rgb(151, 150, 150);
+        }
+
+        .highlight td {
+            font-weight: bold;
+        }
+
+    </style>
+
+</head>
+<body>
+<div class="main">
+    <!--sidemenu-->
+    <th:block th:include="/layouts/sidemenu"/>
+    </div>
+    <th:block th:include="/mail/mail_side"/>
+
+    <section class="project_section">
+        <div class="project_header">
+            <div class="project_header_title">메일함</div>
+            <div class="project_input_wrap">
+                <select id="search-options">
+                    <option value="what-is-value">제목으로 검색하기</option>
+                    <option value="what-is-value">보낸 사람 검색하기</option>
+                </select>
+                <input class="project_search_input" name="searchText" type="text" placeholder="메일 검색">
+                <input class="project_search_button" type="button" value="검색">
+                <input class="project_create_button" type="button" value="예약 전송">
+            </div>
+        </div>
+        <div class="project_body">
+            <table style="text-align: left;" class="boardList">
+                <thead>
+                <tr>
+                    <th><input id="selectAll" class="test" type="checkbox"></th>
+                    <th class="important-icon"><img src="/images/mail/star.png" style="width: 25px; height: 25px"></th>
+                    <th>보낸 사람</th>
+                    <th>제목</th>
+                    <th>보낸 날짜</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><img src="/images/mail/star_empty.png" style="width: 20px; height: 20px"></td>
+                    <td>차윤하 본부장</td>
+                    <td>[인사팀] 안녕하세요</td>
+                    <td>2024-01-09</td>
+                </tr>
+
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><img src="/images/mail/star.png" style="width: 25px; height: 25px"></td>
+                    <td>차윤하 본부장</td>
+                    <td>[인사팀] 안녕하세요 랄라</td>
+                    <td>2024-01-09</td>
+                </tr>
+
+                <tr class="read">
+                    <td><input type="checkbox"></td>
+                    <td><img src="/images/mail/star.png" style="width: 25px; height: 25px"></td>
+                    <td>차윤하 본부장</td>
+                    <td>[인사팀] 안녕하세요 룰루랄라</td>
+                    <td>2024-01-10</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+        <div class="project_footer">
+
+        </div>
+    </section>
+    <!--section-->
+
+
+<script>
+    const mailWrite = document.getElementById('mail-write-button');
+    const mailWriteForMe = document.getElementById('mail-write-button-to-me');
+
+    mailWrite.addEventListener('click',()=>{
+        window.location.href='./sidemenu.html';
+    });
+    mailWriteForMe.addEventListener('click',()=>{
+        window.location.href='./sidemenu.html';
+    });
+</script>
+
+<script>
+    document.querySelectorAll('tr td').forEach(td => {
+        td.addEventListener('mouseover', function() {
+            this.parentNode.classList.add('highlight');
+        });
+
+        td.addEventListener('mouseout', function() {
+            this.parentNode.classList.remove('highlight');
+        });
+    });
+</script>
+
+<script>
+    const selectAllCheckbox = document.getElementById('selectAll');
+    const checkboxes = document.querySelectorAll('.boardList tbody input[type="checkbox"]');
+
+    selectAllCheckbox.addEventListener('change', function() {
+        const selectAllCheckbox = document.getElementById('selectAll');
+
+        checkboxes.forEach(checkbox => {
+            checkbox.checked = this.checked;
+        });
+    });
+</script>
+
+
+</body>
+</html>

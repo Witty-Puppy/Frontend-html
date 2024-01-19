@@ -1,0 +1,144 @@
+.sidemenu {
+    color: #606060;
+    height: 100%;
+    width: 326px;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+}
+
+.company_name {
+    cursor: pointer;
+    width: 100%;
+    font-size: 40px;
+    text-align: center;
+    padding: 1em 0em 0.7em 0em;
+}
+
+.sidemenu_list ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0px auto;
+    width: 280px;
+}
+
+.sidemenu_list li {
+    border-radius: 10px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    cursor: pointer;
+}
+
+.sidemenu_list li:hover {
+    background-color: #FFBE98;
+}
+
+.sidemenu_list li div {
+    font-size: 20px;
+    margin-right: 40px;
+}
+
+.sidemenu_list li:hover div {
+    color: white;
+}
+
+.working_status_wrap {
+    margin: 20px auto;
+    width: 270px;
+    height: 243px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+}
+
+.working_status {
+    width: 100%;
+    height: 100%;
+}
+
+.working_status td {
+    box-sizing: border-box;
+}
+
+.status_title {
+    height: 40px;
+}
+
+.status_title div {
+    display: flex;
+    height:100%;
+    flex-direction: column-reverse;
+}
+
+.status_title span {
+    padding-left: 20px;
+    font-size: 20px;
+}
+
+.status_profile {
+    height: 100px;
+}
+
+.status_profile div {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.status_name_text {
+    font-size: 20px;
+    padding-left: 0.5em;
+}
+
+.status_team_text {
+    font-size: 16px;
+    padding-left: 0.5em;
+}
+
+.status_name_and_team br {
+    margin: 0.4em 0;
+    content: "";
+    display: block;
+}
+
+#status_img {
+    padding-left: 0.5em;
+    height: 1.3em;
+}
+
+.status_name_and_team div {
+    display: flex;
+    align-items: center;
+}
+
+.status_profile img {
+    width: 75px;
+    height: 75px;
+    margin: 0px 10px;
+    border-radius: 50%;
+}
+
+.status_temp_text {
+    font-size: 16px;
+}
+
+.select_status {
+    text-align: center;
+    height: 36px;
+    padding-bottom: 20px;
+}
+
+.select_status select {
+    width: 85%;
+    height: 36px;
+}
+.sidemenu2{
+    display: flex;
+}

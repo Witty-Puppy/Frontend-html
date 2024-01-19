@@ -7,6 +7,8 @@
           href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"/>
     <link rel="stylesheet" href="/css/project/boards_detail_main_layout.css"><!--body와 .main용-->
     <link rel="stylesheet" href="/css/project/boards_detail_section.css"><!--section 용-->
+    <!--toast ui edtior style.-->
+    <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css"/>
 </head>
 <body>
 <div class="main">
@@ -93,7 +95,14 @@
                     <input class="project_boards_info_modify" type="button" value="수정하기"/>
                 </td>
                 <td rowspan="2" class="project_boards_element_2">
-
+                    <div class="project_boards_comment_wrap">
+                        <div class="project_boards_comment_body">
+                            1
+                        </div>
+                        <div class="project_boards_comment_footer">
+                            <div id="editor"></div>
+                        </div>
+                    </div>
                 </td>
             </tr>
             <tr>
@@ -218,5 +227,21 @@
     </section>
     <!--section-->
 </div>
+
+
+<!--토스트 ui-->
+<script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+<script>
+    const Editor = toastui.Editor;
+
+    const editor = new Editor({
+        el: document.querySelector('#editor'),
+        height: '200px',
+        initialEditType: 'markdown',
+        previewStyle: 'tab'
+    });
+
+    editor.getMarkdown();
+</script>
 </body>
 </html>

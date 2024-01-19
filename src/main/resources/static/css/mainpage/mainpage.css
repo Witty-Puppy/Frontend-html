@@ -1,0 +1,259 @@
+.main_section {
+    width: 100%;
+    display: grid;
+    grid-column: auto;
+}
+
+.main_header {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 100px;
+    background-color: #F0F0F0;
+    padding-top: 10px;
+
+}
+
+.main_input_wrap {
+    height: 43px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-right: 60px;
+}
+
+.main_body {
+    width: 100%;
+    background-color: #F0F0F0;
+}
+
+.main_list_wrap {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 43px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 50px;
+}
+
+.main_list_wrap > div {
+    height: 320px;
+    /*border: 1px solid #d9d9d9;*/
+    border: 1px;
+    box-sizing: border-box;
+    /*수정 예정*/
+    /*우선적으로 값을 고정했다.*/
+    width: 600px;
+}
+
+.pay_box{
+    display: flex;
+    padding-left: 50px;
+    gap: 30px;
+    align-items: center;
+    margin-right: 100px;
+    width: 600px;
+
+}
+.pay_wait_box{
+    font-size: 20px;
+    width: 250px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: #FFBE98;
+    border: 0;
+    text-align: center;
+    line-height: 60px;
+}
+
+.pay_completed_box{
+    font-size: 20px;
+    width: 250px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: #FFBE98;
+    border: 0;
+    text-align: center;
+    line-height: 60px;
+}
+
+.pay_more_btn{
+    font-size: 20px;
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    border: 2px solid #fa9a85;
+    color: #fa9a85;
+    background: white;
+}
+
+.pay_more_btn:hover{
+    background-color: #F0F0F0;
+}
+
+.mypage_box{
+    display: flex;
+    background-color: #F0F0F0;
+    border-radius: 10px;
+    width: 500px;
+    height: 70px;
+    /*margin-right: 300px;*/
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    padding-top: 30px;
+
+}
+
+.mypage_btn{
+    font-size: 25px;
+    width: 160px;
+    height: 50px;
+    border-radius: 10px;
+    color: white;
+    background: #fa9a85;
+    border: 0;
+    margin-left: 50px;
+}
+
+.mypage_btn:hover{
+    background-color: #cccccc;
+}
+
+.mypage_name{
+    font-size: 30px;
+    width: 160px;
+    height: 70px;
+    border-radius: 10px;
+    border: 0;
+   text-align: center;
+    line-height: 70px;
+    /*padding-top: 30px;*/
+}
+
+
+.main_list_01{
+    overflow-y: auto;
+/*    이거 스크롤추가인데 쿼리문에서 limit로 가져오면 될 듯*/
+}
+
+
+/*이게 게시판 테이블 css*/
+.group-table2 {
+    background-color: #FFFFFF;
+
+    text-align: center;
+    width: 100%;
+    border-collapse: collapse;
+}
+.list_name1{
+    margin-left: 20px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.group-table2 th, .group-table2 td {
+    border-right: none; /* 열에만 왼쪽 선을 그립니다. */
+    padding: 8px;
+    height: 40px;
+}
+
+.group-table2 th:first-child, .group-table2 td:first-child {
+    border-left: none; /* 첫 열에는 왼쪽 선을 그리지 않습니다. */
+}
+
+.group-table2 th {
+    /*background-color: #f2f2f2;*/
+}
+
+.group-table2 tbody tr:hover {
+    background-color: #FFBE98;
+}
+
+/*여기부터가 프로젝트 테이블 css*/
+.project-table {
+    background-color: #FFFFFF;
+    text-align: center;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.project-table th, .project-table td {
+    border-right: none; /* 열에만 왼쪽 선을 그립니다. */
+    padding: 8px;
+    height: 40px;
+}
+
+.project-table th:first-child, .project-table td:first-child {
+    border-left: none; /* 첫 열에는 왼쪽 선을 그리지 않습니다. */
+}
+
+.project-table tbody tr:hover {
+    background-color: #FFBE98;
+}
+.list_name3{
+    margin-left: 20px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+/*여기부터 두번째 근태 박스 css*/
+
+.attendance-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 3px;
+    border: 1px solid #000;
+}
+
+.date-box {
+    font-size: 18px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.button-container {
+    display: flex;
+    gap: 100px;
+}
+
+.round-button,
+.round-button2 {
+    background-color: cornflowerblue;
+    width: 100px;
+    height: 100px;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.round-button:hover {
+    background-color: #cccccc;
+}
+
+.message {
+    font-size: 14px;
+    color: #555;
+}
+
+.list_name2{
+    margin-left: 20px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+/*여기부터 4번째 캘린더 박스*/
+.list_name4{
+    margin-left: 20px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+

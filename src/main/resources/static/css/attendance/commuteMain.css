@@ -317,9 +317,13 @@ hr{
 }
 .calenderOption{
     position: relative;
+    top: 15px;
+    left: 80px;
     height: 30px;
-    width: 140px;
+    width: 400px;
     border: 0.5px solid #414141;
+    display: inline-block;
+    cursor: pointer;
 }
 
 

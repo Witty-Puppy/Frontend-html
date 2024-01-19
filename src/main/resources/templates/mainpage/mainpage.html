@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>demo</title>
+    <link rel="stylesheet" as="style" crossorigin
+          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"/>
+    <link rel="stylesheet" href="/css/main_layout.css"> <!--body와 .main용-->
+    <link rel="stylesheet" href="/css/mainpage/mainpage.css"><!--section 용-->
+</head>
+<body>
+<div class="main">
+    <!--sidemenu-->
+    <th:block th:include="/layouts/sidemenu"/>
+    <!--sidemenu-->
+    <!--sidemenu2-->
+
+<!--메인 페이지에는 섹션 2 없음-->
+    <!--section-->
+    <section class="main_section">
+        <div class="main_header">
+<!--            <div class="pay_title">결재사항</div>-->
+            <div class="pay_box">
+                <div class="pay_wait_box">
+                    결재 대기 : <span id="payCount">3</span> 건
+                </div>
+                <div class="pay_completed_box">
+                    결재 완료 : <span id="payCompletedCount">3</span> 건
+                </div>
+                <button class="pay_more_btn" >더보기</button>
+            </div>
+            <div class="mypage_box">
+                <div class="mypage_name">홍길동님</div>
+                <input class="mypage_btn" type="button" value="마이페이지">
+            </div>
+
+        </div>
+
+        <div class="main_body">
+            <div class="main_list_wrap">
+<!--첫번째 박스-->
+                <div class="main_list_01 ">
+                    <div class="list_name1">&lt;게시판&gt;</div>
+                    <div class="table_height">
+                        <table class="group-table2">
+                            <thead>
+                            <tr>
+                                <th>게시글번호</th>
+                                <th>내용</th>
+                                <th>부서</th>
+                                <th>날짜</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>잔여 연차 처리 관련...</td>
+                                <td>영업부</td>
+                                <td>2024년 1월 23일</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>잔여 연차 처리 관련...</td>
+                                <td>영업부</td>
+                                <td>2024년 1월 23일</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>잔여 연차 처리 관련...</td>
+                                <td>영업부</td>
+                                <td>2024년 1월 23일</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>잔여 연차 처리 관련...</td>
+                                <td>영업부</td>
+                                <td>2024년 1월 23일</td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+<!--두번째 박스-->
+                <div class="main_list_02">
+                    <div class="list_name2">&lt;근태&gt;</div>
+
+                    <div class="attendance-box">
+                        <div class="date-box">
+                            <p>2024-01-18</p>
+                            <hr>
+                        </div>
+                        <div class="button-container">
+                            <button class="round-button">출근하기</button>
+                            <button class="round-button round-button2">퇴근하기</button>
+                        </div>
+                        <p class="message">홍길동님 출근했습니다</p>
+                    </div>
+
+                </div>
+
+<!--세번째 박스-->
+                <div class="main_list_03">
+                    <div class="list_name3" >&lt;프로젝트&gt;</div>
+
+                    <div class="project_table_height">
+                        <table class="project-table">
+                            <thead>
+                            <tr>
+                                <th>게시글번호</th>
+                                <th>내용</th>
+                                <th>부서</th>
+                                <th>날짜</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>회사 로고 변경..</td>
+                                <td>개발2팀</td>
+                                <td>23/12/21 ~ 24/03/03</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>그룹웨어 관련 프로젝트</td>
+                                <td>개발3팀</td>
+                                <td>23/12/21 ~ 24/03/03</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>그룹웨어 관련 프로젝트</td>
+                                <td>개발3팀</td>
+                                <td>23/12/21 ~ 24/03/03</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>그룹웨어 관련 프로젝트</td>
+                                <td>개발3팀</td>
+                                <td>23/12/21 ~ 24/03/03</td>
+                            </tr>
+
+                            <!-- 실제 데이터는 서버에서 가져와서 반복적으로 표시해야 함 -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+<!--네번째 박스-->
+                <div class="main_list_04">
+                    <div class="list_name4">&lt;캘린더&gt;</div>
+
+                    <div class="weather-container">
+                        <h2>현재 날씨</h2>
+                        <img src="" alt="날씨 아이콘" class="weather-icon" id="weatherIcon">
+                        <p id="temperature">기온: </p>
+                        <p id="weatherStatus">상태: </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+    </section>
+    <!--section-->
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // 가상의 API endpoint와 API key로 대체되어야 합니다.
+        const apiUrl = 'https://api.example.com/weather';
+        const apiKey = 'your-api-key';
+
+        // API 호출 및 날씨 정보 업데이트
+        fetch(`${apiUrl}?apiKey=${apiKey}`)
+            .then(response => response.json())
+            .then(data => {
+                // 날씨 아이콘과 정보 업데이트
+                document.getElementById('weatherIcon').src = data.iconUrl;
+                document.getElementById('temperature').innerText = `기온: ${data.temperature}°C`;
+                document.getElementById('weatherStatus').innerText = `상태: ${data.status}`;
+            })
+            .catch(error => console.error('날씨 정보를 가져오는 중 오류 발생:', error));
+    });
+</script>
+
+</body>
+</html>

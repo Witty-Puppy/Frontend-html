@@ -22,7 +22,7 @@
                     <div class="vacation-box">
                         <span class="vacation-leave">남은 연차</span>
                         <span class="vacation-image"><img src="/images/AttendanceManagement/vacation.png"></span>
-                        <div class="vacation">3</div>
+                        <div class="vacation" th:text="${''}">3</div>
                         <span class="vacation-day">일</span>
                         <a th:href="@{''}" class="vacation-apply">휴가 신청하기 ></a>
                     </div>
@@ -30,9 +30,9 @@
                     <div class="payment-box">
                         <span class="payment-leave">결재 대기</span>
                         <span class="payment-image"><img src="/images/AttendanceManagement/payment.png"></span>
-                        <div class="payment">3</div>
+                        <div class="payment" th:text="${''}">3</div>
                         <span class="payment-count">건</span>
-                        <a th:href="@{''}" class="payment-check">결제하기 ></a>
+                        <a th:href="@{/attend/payment-waiting}" class="payment-check">결제하기 ></a>
                     </div>
 
                     <div class="work-box">
@@ -49,8 +49,8 @@
                         <span class="today-time" id="currentDateTime"></span>
                         <hr>
                         <div class="current-info">
-                            <span class="userN">ooo님, 안녕하세요.</span><br>
-                            <span class="current">00 했습니다.</span>
+                            <span class="userN" th:text="${''} + '님, 안녕하세요' ">ooo님, 안녕하세요.</span><br>
+                            <span class="current">출근 전 입니다.</span>
                         </div>
                         <div class="time-info">
                             <span class="workTime">출근: 00 : 00 : 00</span><br>
@@ -66,17 +66,19 @@
 
                 <div class="calender-area">
                     <div class="calender-title">
-                        <button class="pre"> < </button>
-                        <span class="now">2023 - 12</span>
-                        <button class="nex"> > </button>
+                        <button class="pre" onclick="changeMonth(-1)"> < </button>
+                        <span class="now"></span>
+                        <button class="nex" onclick="changeMonth(1)"> > </button>
                     </div>
-                    <select class="calenderOption" >
-                        <option value="vacation">휴가</option>
-                        <option value="outside">외근</option>
-                        <option value="extension">연장근로</option>
-                        <option value="business">출장</option>
-                        <option value="home">재택근무</option>
-                    </select>
+                    <div class="calenderOption" id="calenderOption">
+                        <div class="options-container">
+                            <label><input type="checkbox" value="vacation"> 휴가</label>
+                            <label><input type="checkbox" value="outside"> 외근</label>
+                            <label><input type="checkbox" value="extension"> 연장근로</label>
+                            <label><input type="checkbox" value="business"> 출장</label>
+                            <label><input type="checkbox" value="home"> 재택근무</label>
+                        </div>
+                    </div>
                     <div class="calender"></div>
 
                 </div>
@@ -111,7 +113,7 @@
 
 
 
-        //출퇴근 버튼 누를 때
+        //출퇴근 버튼 누를 때 근무 시간 시작 & 멈춤
         var workButtonClicked = false;  // "출근" 버튼이 클릭되었는지 여부를 나타내는 변수
         var leaveButtonClicked = false;  // "퇴근" 버튼이 클릭되었는지 여부를 나타내는 변수
         var startTime;  // 근무 시작 시간을 저장하는 변수
@@ -123,18 +125,27 @@
             var minutes = currentTime.getMinutes();
             var seconds = currentTime.getSeconds();
 
-            if (type === 'work' && !workButtonClicked) {
+            if (type === 'work' && !workButtonClicked && !leaveButtonClicked) {
                 var workTimeSpan = document.querySelector('.workTime');
                 workTimeSpan.textContent = '출근: ' + formatTime(hours) + ' : ' + formatTime(minutes) + ' : ' + formatTime(seconds);
                 workButtonClicked = true;
-                startTime = currentTime;  // 출근할 때 현재 시간을 근무 시작 시간으로 저장
-                updateWorkedTime();  // 근무 시간을 업데이트하기 시작
-            } else if (type === 'leave' && !leaveButtonClicked) {
+                startTime = currentTime;
+                updateWorkedTime();
+                updateCurrentStatus('출근했습니다.');
+            } else if (type === 'leave' && workButtonClicked && !leaveButtonClicked) {
                 var leaveTimeSpan = document.querySelector('.leaveTime');
                 leaveTimeSpan.textContent = '퇴근: ' + formatTime(hours) + ' : ' + formatTime(minutes) + ' : ' + formatTime(seconds);
                 leaveButtonClicked = true;
-                totalWorkedTime += currentTime - startTime;  // 퇴근할 때 경과된 시간을 총 근무 시간에 더함
+                totalWorkedTime += currentTime - startTime;
+                updateCurrentStatus('퇴근했습니다.');
+            } else if (type === 'leave' && !workButtonClicked) {
+                alert('출근을 먼저 해주세요.');
             }
+        }
+
+        function updateCurrentStatus(status) { //출퇴근 상태
+            var currentStatusSpan = document.querySelector('.current');
+            currentStatusSpan.textContent = status;
         }
 
         function updateWorkedTime() {
@@ -147,7 +158,7 @@
                 var workedHourSpan = document.querySelector('.workedHour');
                 workedHourSpan.textContent = formatTime(hours) + 'h ' + formatTime(minutes) + 'm';
 
-                setTimeout(updateWorkedTime, 1000);  // 1초마다 근무 시간을 업데이트
+                setTimeout(updateWorkedTime, 60000);  // 1분마다 근무 시간을 업데이트
             }
         }
 
@@ -155,11 +166,62 @@
             return time < 10 ? '0' + time : time;
         }
 
-    
+
+
+        //월 증가 감소
+        // 현재 날짜 기준으로 초기화
+        let currentDate = new Date();
+        let currentYear = currentDate.getFullYear();
+        let currentMonth = currentDate.getMonth() + 1; // JavaScript에서 월은 0부터 시작하므로 1을 더해줍니다.
+
+        function updateTitle() {
+            document.querySelector('.now').textContent = currentYear + ' - ' + (currentMonth < 10 ? '0' : '') + currentMonth;
+        }
+
+        function changeMonth(offset) {
+            currentMonth += offset;
+
+            if (currentMonth > 12) {
+                currentMonth = 1;
+                currentYear++;
+            } else if (currentMonth < 1) {
+                currentMonth = 12;
+                currentYear--;
+            }
+
+            updateTitle();
+        }
+
+        // 초기 실행
+        updateTitle();
+
+
+        // function checkAndClickLeaveButton() {
+        //     // 현재 시간을 가져오기
+        //     var now = new Date();
+        //     var hours = now.getHours();
+        //     var minutes = now.getMinutes();
+        //
+        //     // workTime 값 가져오기
+        //     var workTimeElement = document.querySelector('.workTime');
+        //     var workTimeValue = workTimeElement.textContent.trim();
+        //
+        //     // 18시 01분에 퇴근 버튼을 클릭하고 출근한 경우에만
+        //     if (hours === 16 && minutes === 36 && workTimeValue !== '출근: 00 : 00 : 00') {
+        //         var leaveButton = document.getElementById('leaveCheckButton');
+        //
+        //         if (leaveButton) {
+        //             leaveButton.click();
+        //             clearInterval(intervalId); // 목표 시간에 클릭하면 setInterval 종료
+        //         }
+        //     }
+        // }
+        //
+        // // 10초마다 checkAndClickLeaveButton 함수를 호출
+        // var intervalId = setInterval(checkAndClickLeaveButton, 10000); //
+
 
     </script>
-
-
 
 </body>
 </html>

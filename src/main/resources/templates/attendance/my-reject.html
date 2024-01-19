@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>내 신청 문서 승인</title>
-    <link rel="stylesheet" href="/css/attendance/approvalPayment.css">
+    <title>내 신청 문서 반려</title>
+    <link rel="stylesheet" href="/css/attendance/rejectPayment.css">
 </head>
 <body>
     <div class="main">
@@ -23,6 +23,7 @@
 
                 <div class="bar2"></div>
             </div>
+
             <div class="list-commute-area">
                 <table style="border-collapse: collapse; font-size: 16px; width: 1200px;">
                     <tr class="list-commute-detail" style="background-color: #F5F5F5;" >
@@ -39,7 +40,7 @@
                         <td class="list-commute-detail">마케팅팀</td>
                         <td class="list-commute-detail">
                             01-02 10:12
-                            <button onclick="openPopup()">상세보기</button>
+                            <button th:onclick="openPopup()">상세보기</button>
                         </td>
                     </tr>
                 </table>
