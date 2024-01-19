@@ -1,4 +1,4 @@
-package com.wittypuppy.mypage;
+package com.wittypuppy.mypage.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,12 +21,6 @@ public class MyPageController {
     public String mypagePassword(){
         return "mypage/mypageVacation";
     }
-
-    @GetMapping("/mypagealarm")
-    public String mypageAlarm(){
-        return "mypage/mypageAlarm";
-    }
-
 
 
 }

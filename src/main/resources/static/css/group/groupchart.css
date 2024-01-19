@@ -2,16 +2,6 @@
 
 /* 새로운 스타일 추가 */
 
-/*.second-content{*/
-/*    display: flex;*/
-/*    background-color: gainsboro;*/
-/*    margin-left: 326px; !* 사이드바의 너비만큼 여백 설정 *!*/
-/*    box-sizing: border-box; !* 패딩과 경계 상자 크기 포함 *!*/
-/*    width: 300px;*/
-/*    height:1080px;*/
-
-/*}*/
-
 .group-content {
     display: flex;
     /* margin-left: 326px; 사이드바의 너비만큼 여백 설정 */

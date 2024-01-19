@@ -100,7 +100,7 @@
     background-color: yellow;
 }
 
-.messenger_body_2 > .apply {
+.messenger_body .apply {
     position: absolute;
     right: 20px;
     bottom: 20px;
