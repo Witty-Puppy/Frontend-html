@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/approval")
 public class ApprovalController {
     @GetMapping("/form")
-    public String projectMain() {
+    public String formList() {
         return "approval/form_list";
     }
     @GetMapping("/on_leave_form")
@@ -17,7 +17,9 @@ public class ApprovalController {
         return "approval/on_leave_form";
     }
     @GetMapping("/overtime_form")
-    public String overtimeForm() { return "approval/overtime_form"; }
+    public String overtimeForm() {
+        return "approval/overtime_form";
+    }
     @GetMapping("/away_form")
     public String awayForm() {
         return "approval/away_form";
@@ -34,4 +36,10 @@ public class ApprovalController {
     public String swForm() {
         return "approval/sw_form";
     }
+
+    @GetMapping("/writing")
+    public String approvalWriting() {
+        return "approval/writing_doc";
+    }
+
 }
