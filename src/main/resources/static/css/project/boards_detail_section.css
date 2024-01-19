@@ -200,8 +200,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 2px 5px;
-    padding-left: 0;
+    padding: 2px 5px 2px 0;
 }
 
 .member_list_img_and_name {
@@ -229,3 +228,15 @@
 .project_boards_element_2 {
     padding: 30px 20px;
 }
+
+.project_boards_comment_wrap {
+    display: grid;
+    grid-template-rows: 574px 200px;
+}
+
+.project_boards_comment_body,
+.project_boards_comment_footer {
+    height: 100%;
+    width: 100%;
+}
+.project_boards_comment_body
