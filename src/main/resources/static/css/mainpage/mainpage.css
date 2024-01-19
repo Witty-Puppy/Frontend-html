@@ -9,6 +9,7 @@
     justify-content: space-between;
     margin-top: 100px;
     background-color: #F0F0F0;
+    padding-top: 10px;
 
 }
 
@@ -55,21 +56,25 @@
 
 }
 .pay_wait_box{
-    font-size: 15px;
+    font-size: 20px;
     width: 250px;
     height: 60px;
     border-radius: 10px;
     background-color: #FFBE98;
     border: 0;
+    text-align: center;
+    line-height: 60px;
 }
 
 .pay_completed_box{
-    font-size: 15px;
+    font-size: 20px;
     width: 250px;
     height: 60px;
     border-radius: 10px;
     background-color: #FFBE98;
     border: 0;
+    text-align: center;
+    line-height: 60px;
 }
 
 .pay_more_btn{
@@ -80,6 +85,10 @@
     border: 2px solid #fa9a85;
     color: #fa9a85;
     background: white;
+}
+
+.pay_more_btn:hover{
+    background-color: #F0F0F0;
 }
 
 .mypage_box{
