@@ -83,14 +83,15 @@
     background-color: #f87152;
 }
 .mail-send-button{
-    margin-left: 2px;
+    margin-left: 530px;
     transition: background-color 0.5s ease;
     height: 50px;
     width: 200px;
-    margin-top: -30px;
+    margin-top: 30px;
     background-color: #FA9A85;
     border: 0px; border-radius: 10px;
     color: white;
+
 }
 
 

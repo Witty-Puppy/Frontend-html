@@ -1,0 +1,36 @@
+.user-img{
+    width: 117px;
+    height: 156px;
+    background: grey;
+    margin: 10px;
+    text-align: center;
+}
+#user-detail,#user-education {
+    border-collapse: collapse;
+    width: 400px;
+    height: 20px;
+}
+
+#user-detail th,#user-detail td, #user-education th,#user-education td{
+    width: 300px;
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}
+
+#user-detail th, #user-education th {
+    width: 80px;
+    background-color: #f2f2f2;
+}
+
+#user-detail td, #user-education td{
+    text-align: center;
+}
+
+#user-education{
+    grid-column: none;
+    position: relative;
+    top: 350px;
+    left: -630px;
+    width: 1000px;
+}
