@@ -20,4 +20,9 @@ public class AdminController {
 
         return "admin/admin_group";
     }
+    @GetMapping("admin-user-detail")
+    public String showUserDetail(){
+
+        return "admin/admin_user-detail";
+    }
 }
