@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/approval/writing_doc.css">
+    <title>writing document</title>
+    <link rel="stylesheet" href="/css/main_layout.css"><!--body와 .main용-->
+    <link rel="stylesheet" href="/css/approval/approval_side.css"><!--body와 .main용-->
+
+    <link rel="stylesheet" as="style" crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"/>
+</head>
+<body>
+<div class="main">
+    <th:block th:include="/layouts/sidemenu"/>
+    <th:block th:include="/approval/approval_side.html"/>
+    <section clas="approval_writing_section">
+    <div class="new_form_title_section">
+        <div class="new_form_title_box"></div>
+        <span class="new_form_title">기안서 작성</span>
+    </div>
+
+    <div class="writing_and_approval_line">
+        <div class="writing_button_and_content">
+            <div class="writing_section">
+                <div class="aproval_save_button">
+                    <span class="saving_text">임시 저장</span>
+                </div>
+                <div class="approval_submit_button">
+                    <span class="submitting_text">결재 상신</span>
+                </div>
+            </div>
+
+            <div class="form_writing_section">
+            </div>
+        </div>
+
+        <div class="approval_line_section">
+            <div class="approval_line_title">
+                <div class="approval_line_list">
+                    <span class="approval_line_list_text">결재선</span>
+                    <div class="underline"></div>
+                </div>
+                <div class="view_line_list">
+                    <span class="view_line_list_text">열람자</span>
+                    <div class="underline"></div>
+                </div>
+                <div class="attached_file_list">
+                    <span class="attached_file_list_text">첨부문서</span>
+                    <div class="underline"></div>
+                </div>
+            </div>
+            <div class="shaded_underline"></div>
+            <div class="set_approval_line">
+                <div class="set_approval_line_button">
+                    <span class="set_approval_line_text">결재선 지정</span>
+                </div>
+            </div>
+            <div class="approval_employee_list">
+                
+            </div>
+        </div>
+    </div>
+    </section>
+</div>
+
+</body>
+</html>
