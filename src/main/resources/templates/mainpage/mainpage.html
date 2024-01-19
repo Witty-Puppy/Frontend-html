@@ -21,8 +21,12 @@
         <div class="main_header">
 <!--            <div class="pay_title">결재사항</div>-->
             <div class="pay_box">
-                <div class="pay_wait_box"></div>
-                <div class="pay_completed_box"></div>
+                <div class="pay_wait_box">
+                    결재 대기 : <span id="payCount">3</span> 건
+                </div>
+                <div class="pay_completed_box">
+                    결재 완료 : <span id="payCompletedCount">3</span> 건
+                </div>
                 <button class="pay_more_btn" >더보기</button>
             </div>
             <div class="mypage_box">
@@ -146,13 +150,41 @@
                 <div class="main_list_04">
                     <div class="list_name4">&lt;캘린더&gt;</div>
 
+                    <div class="weather-container">
+                        <h2>현재 날씨</h2>
+                        <img src="" alt="날씨 아이콘" class="weather-icon" id="weatherIcon">
+                        <p id="temperature">기온: </p>
+                        <p id="weatherStatus">상태: </p>
+                    </div>
+
                 </div>
 
             </div>
         </div>
 
+
     </section>
     <!--section-->
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // 가상의 API endpoint와 API key로 대체되어야 합니다.
+        const apiUrl = 'https://api.example.com/weather';
+        const apiKey = 'your-api-key';
+
+        // API 호출 및 날씨 정보 업데이트
+        fetch(`${apiUrl}?apiKey=${apiKey}`)
+            .then(response => response.json())
+            .then(data => {
+                // 날씨 아이콘과 정보 업데이트
+                document.getElementById('weatherIcon').src = data.iconUrl;
+                document.getElementById('temperature').innerText = `기온: ${data.temperature}°C`;
+                document.getElementById('weatherStatus').innerText = `상태: ${data.status}`;
+            })
+            .catch(error => console.error('날씨 정보를 가져오는 중 오류 발생:', error));
+    });
+</script>
+
 </body>
 </html>
