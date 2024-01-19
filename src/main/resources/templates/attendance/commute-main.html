@@ -49,12 +49,12 @@
                         <span class="today-time" id="currentDateTime"></span>
                         <hr>
                         <div class="current-info">
-                            <span class="userN" th:value="${''} + '님, 안녕하세요' ">ooo님, 안녕하세요.</span><br>
+                            <span class="userN" th:text="${''} + '님, 안녕하세요' ">ooo님, 안녕하세요.</span><br>
                             <span class="current">출근 전 입니다.</span>
                         </div>
                         <div class="time-info">
-                            <span class="workTime" >출근: 00 : 00 : 00</span><br>
-                            <span class="leaveTime" >퇴근: 00 : 00 : 00</span>
+                            <span class="workTime">출근: 00 : 00 : 00</span><br>
+                            <span class="leaveTime">퇴근: 00 : 00 : 00</span>
                         </div>
                         <button id="workCheckButton" class="work-check" onclick="updateTime('work')">출근</button>
                         <button id="leaveCheckButton" class="leave-check" onclick="updateTime('leave')">퇴근</button>

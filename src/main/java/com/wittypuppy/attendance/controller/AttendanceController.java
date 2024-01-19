@@ -10,41 +10,46 @@ public class AttendanceController {
 
     @GetMapping("/commute-main")
     public String commuteMain(){
-        return "attendance/commuteMain";
+        return "attendance/commute-main";
     }
 
 
     @GetMapping("/commute-list")
-    public String commuteList(){ return "attendance/commuteList";}
+    public String commuteList(){ return "attendance/commute-list";}
 
     @GetMapping("/payment-approval")
     public String paymentApproval(){
-        return "attendance/approvalPayment";
+        return "attendance/payment-approval";
     }
 
     @GetMapping("/payment-waiting")
     public String paymentWaiting(){
-        return "attendance/waitingPayment";
+        return "attendance/payment-waiting";
     }
 
     @GetMapping("/payment-reject")
     public String paymentReject(){
-        return "attendance/rejectPayment";
+        return "attendance/payment-reject";
     }
 
     @GetMapping("/my-approval")
     public String myApplyApproval(){
-        return "attendance/myApplyApproval";
+        return "attendance/my-approval";
     }
 
     @GetMapping("/my-waiting")
     public String myApplyWaiting(){
-        return "attendance/myApplyWaiting";
+        return "attendance/my-waiting";
     }
 
     @GetMapping("/my-reject")
     public String myApplyReject(){
-        return "attendance/myApplyReject";
+        return "attendance/my-reject";
+    }
+
+    @GetMapping("/team-commute-list")
+    public String teamCommuteList(){
+        return "attendance/team-commute-list";
     }
 }
 
