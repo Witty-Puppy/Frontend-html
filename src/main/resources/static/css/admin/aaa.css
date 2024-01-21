@@ -5,25 +5,25 @@
     margin: 10px;
     text-align: center;
 }
-#user-detail,#user-education {
+#user-detail,#user-education, #user-career, #user-certificate, #info{
     border-collapse: collapse;
     width: 400px;
     height: 20px;
 }
 
-#user-detail th,#user-detail td, #user-education th,#user-education td{
+#user-detail th,#user-detail td, #user-education th,#user-education td, #user-career td,#user-career th,#user-certificate td,#user-certificate th,#info td,#info th{
     width: 300px;
     border: 1px solid black;
     padding: 8px;
     text-align: center;
 }
 
-#user-detail th, #user-education th {
+#user-detail th, #user-education th ,#user-career th, #user-certificate th, #info th{
     width: 80px;
     background-color: #f2f2f2;
 }
 
-#user-detail td, #user-education td{
+#user-detail td, #user-education td, #user-career td, #user-certificate td,#info td{
     text-align: center;
 }
 
@@ -31,6 +31,27 @@
     grid-column: none;
     position: relative;
     top: 350px;
+    left: -630px;
+    width: 1000px;
+}
+#user-career{
+    grid-column: none;
+    position: relative;
+    top: -300px;
+    left: -630px;
+    width: 1000px;
+}
+#user-certificate{
+    grid-column: none;
+    position: relative;
+    top: -250px;
+    left: -630px;
+    width: 1000px;
+}
+#info{
+    grid-column: none;
+    position: relative;
+    top: -200px;
     left: -630px;
     width: 1000px;
 }

@@ -12,7 +12,18 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
-
+    <style>
+        .mail-send-button{
+            width: 126px;
+            height: 37px;
+            flex-shrink: 0;
+            border-radius: 5px;
+            background: #FA9A85;
+            border: none;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
 <script>
@@ -29,23 +40,9 @@
     <th:block th:include="/admin/sidebar/admin_sidebar"/>
 
     <div class="sidemenu2">
-        <span id="noread">
-            <div id="noread-count">24</div>
-            <div>안읽음</div>
-        </span>
-
-        <span id="important">
-            <img id="inportant-icon" src="/images/mail/star.png" width="20px" height="20px">
-            <div>중요</div>
-        </span>
-
-        <span id="trash">
-            <img id="trash-icon" src="/images/mail/trash.png" width="20px" height="20px">
-            <div>휴지통</div>
-        </span>
         <ul>
             <li>
-                <div>받은 메일</div>
+                <div onclick="window.location.href='/admin-mail/receive'">받은 메일</div>
             </li>
             <li>
                 <div>모든 임시 보관</div>
@@ -66,7 +63,7 @@
     </div>
     <!--sidemenu2-->
     <!--section-->
-    <section class="project_section">
+    <section class="project_section" style="margin-left: 20px">
         <div class="project_header">
             <div class="project_header_title">관리자 메일 쓰기</div>
             <div class="project_input_wrap">
@@ -76,19 +73,21 @@
             <input style="width: 1240px; height: 30px; margin-bottom: 30px;" type="text" placeholder="제목을 입력하세요">
             <br/>
             <br/>
-            <select>
+            <span>선택하지 않으면 모두에게 발송됩니다.</span>
+            <br/>
+            <select style="width: 196px;height: 30px;flex-shrink: 0;">
                 <option value="" hidden>조직을 선택하세요</option>
                 <option value="option1">조직1</option>
                 <option value="option2">조직2</option>
                 <option value="option3">조직3</option>
             </select>
-            <select>
+            <select style="width: 196px;height: 30px;flex-shrink: 0;">
                 <option value="" hidden>부서를 선택하세요</option>
                 <option value="option1">부서1</option>
                 <option value="option2">부서2</option>
                 <option value="option3">부서3</option>
             </select>
-            <select>
+            <select style="width: 196px;height: 30px;flex-shrink: 0;">
                 <option value="" hidden>사원을 선택하세요</option>
                 <option value="option1">사원1</option>
                 <option value="option2">사원2</option>
@@ -96,7 +95,7 @@
             </select>
             <br/>
             <br/>
-            <span>&nbsp;&nbsp; 예약 전송하기&nbsp;&nbsp;&nbsp;&nbsp;</span><input style="width: 200px;" type="date">
+            <span>&nbsp;&nbsp; 예약 전송하기&nbsp;&nbsp;&nbsp;&nbsp;</span><input  style="width: 196px;height: 30px;flex-shrink: 0;" type="date">
             <br/>
             <br/>
             <textarea class="summernote" name=""></textarea>

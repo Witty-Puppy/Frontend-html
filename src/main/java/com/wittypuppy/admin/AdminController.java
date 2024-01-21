@@ -10,6 +10,10 @@ public class AdminController {
 
         return "admin/admin_mail";
     }
+    @GetMapping("/admin-mail/receive")
+    public String showAdminMailReceive(){
+        return "admin/admin_receive_mail";
+    }
     @GetMapping("admin-approval")
     public String showAminApproval(){
 
