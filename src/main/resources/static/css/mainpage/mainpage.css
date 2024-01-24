@@ -1,3 +1,10 @@
+.main {
+    display: grid;
+    grid-template-columns: 326px 245px auto;
+    width: 100%;
+}
+
+
 .main_section {
     width: 100%;
     display: grid;
@@ -10,6 +17,7 @@
     margin-top: 100px;
     background-color: #F0F0F0;
     padding-top: 10px;
+
 
 }
 
