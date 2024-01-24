@@ -149,3 +149,14 @@ font-size: 20px;
     width: 100px;
     height: 30px;
 }
+
+/*필요없는 css */
+a {
+    text-decoration: none;
+}
+a:link {
+    color: black;
+}
+a:visited {
+    color: black;
+}
