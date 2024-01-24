@@ -42,4 +42,11 @@ public class ApprovalController {
         return "approval/writing_doc";
     }
 
+    @GetMapping("/awaiting_list")
+    public String awaitingList() {
+        return "approval/awaiting_list";
+    }
+
+    @GetMapping("/on_process_list")
+    public String onProcessList() { return "approval/on_process_list";}
 }
