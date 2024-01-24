@@ -1,5 +1,6 @@
-.approval_writing_section{
-    width: 100%;
+.doc_writing_section {
+    width: 1335px;
+    height: 1080px;
     display: grid;
     grid-column: auto;
     background-color: #F5F5F5;
@@ -22,7 +23,6 @@
     height: 944px;
     background-color: white;
     margin-top: 7px;
-    margin-left: 7px;
 }
 .writing_section {
     height: 70px;
@@ -32,8 +32,7 @@
     border-bottom: 1px solid #D3D3D3;
 }
 .writing_button_and_content {
-    height: 953px;
-    margin-top: 7px;
+    height: 972px;
     background-color: white;
 }
 .aproval_save_button, .approval_submit_button{
@@ -70,16 +69,17 @@
     background-color: white;
 }
 .approval_line_section {
-    width: 348px;
-    height: 953px;
+    width: 356px;
+    height: 972px;
     margin-left: 7px;
-    margin-top: 7px;
     background-color: white;
 }
 .writing_and_approval_line{
     display: flex;
 	flex-direction: row;
     width: 1335px;
+    height: 972px;
+    margin-top: 5px;
     background-color: #F5F5F5;
 }
 .approval_line_list_text, .view_line_list_text, .attached_file_list_text{
@@ -107,17 +107,6 @@
     width: 65%;
     height: 2px;
     background-color: #FA9A85;
-    z-index: 1;
-}
-.shaded_underline {
-    position: relative;
-    top: -1.5px;
-    left: 0;
-    width: 90%;
-    height: 1.5px;
-    background-color: #D3D3D3;
-    margin: auto;
-    z-index: 0;
 }
 .set_approval_line_button{
     width: 72px;
@@ -140,15 +129,15 @@
 }
 .approval_line_popup{
     position: absolute;
-    top: 150px;
-    left: 700px;
-    width: 893px;
-    height: 705px;
+    top: 190px;
+    left: 780px;
+    width: 740px;
+    height: 613.73px;
     background-color: white;
     border: #D3D3D3 solid 1px;
 }
 .approval_line_popup_title{
-    width: 893px;
+    width: 740px;
     height: 64px;
     background-color: #F5F5F5;
     display: flex;
@@ -176,7 +165,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 435px;
+    margin-left: 282px;
 }
 .line_cancel_text{
     font-family: pretendard;
@@ -197,4 +186,91 @@
     font-family: pretendard;
     font-size: 16px;
     color: white;
+}
+.approval_line_popup_content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.group-content, .group-content-assigned {
+    display: flex;
+    /* margin-left: 326px; 사이드바의 너비만큼 여백 설정 */
+    /*margin-top: 30px;*/
+    padding: 20px; /* 내용에 여백 추가 (선택사항) */
+    box-sizing: border-box; /* 패딩과 경계 상자 크기 포함 */
+    flex-direction: column;
+}
+.groupchart {
+    width: 300px;
+    border-color: bisque;
+    border-radius: 1px;
+    border: 1px solid rgb(178, 177, 177);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column; /* 세로로 정렬 */
+    align-items: center;
+    padding-bottom: 30px;
+    margin-left: 5px;
+}
+.groupchart-assigned{
+    width: 300px;
+    height: 509.73px;
+    border-color: bisque;
+    border-radius: 1px;
+    border: 1px solid rgb(178, 177, 177);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column; /* 세로로 정렬 */
+    align-items: center;
+    padding-bottom: 30px;
+}
+#org-chart-box {
+    width: 280px;
+    height: 590px;
+    max-height: 400px;
+    border-color: bisque;
+    border-radius: 1px;
+    border: 1px solid rgb(178, 177, 177);
+    box-sizing: border-box;
+    margin: 0 auto; /* 수평 가운데 정렬을 위한 속성 추가 */
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* 스크롤 추가 */
+}
+#org-chart{
+    margin-top: 15px;
+    max-height: 800px;
+}
+.search-container {
+    display: flex;
+    width: 95%;
+    max-width: 280px;
+    margin: 20px auto;
+    /* position: sticky;
+    top: 0; */
+}
+#searchInput {
+    flex: 1;
+    padding: 8px;
+}
+#searchButton {
+    padding: 8px 12px;
+    background-color:#FFBE98 ;
+    color: white;
+    border-radius: 1px;
+    cursor: pointer;
+}
+.assign_button, .undo_button{
+    height: 25px;
+    width: 25px;
+    padding: 2px;
+}
+.assign_and_undo{
+    display: flex;
+    flex-direction: column;
+    width: 25px;
+    margin-left: 8.75px;
+    margin-right: 8.75px;
 }

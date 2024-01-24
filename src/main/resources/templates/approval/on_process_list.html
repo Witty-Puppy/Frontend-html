@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/approval/on_process_list.css">
+    <title>on process list</title>
+    <link rel="stylesheet" href="/css/main_layout.css"><!--body와 .main용-->
+    <link rel="stylesheet" href="/css/approval/approval_side.css"><!--body와 .main용-->
+    <link rel="stylesheet" as="style" crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"/>
+</head>
+<body>
+<div class="main">
+    <th:block th:include="/layouts/sidemenu"/>
+    <th:block th:include="/approval/approval_side.html"/>
+    <section clas="on_process_section">
+    <div class="awaiting_title_section">
+        <span class="awaiting_title">결재 진행함</span>
+        <select class="doc_search-options">
+            <option value="search_by_title">제목</option>
+            <option value="search_by_name">이름</option>
+        </select>
+        <div class="doc_search_section">
+            <input type="text" class="doc_search" placeholder="검색어를 입력해주세요.">
+            <img class="search_icon" src="/images/approval/search.png"/>
+        </div>
+    </div>
+
+    <div class="awaiting_list_content">
+        <table style="text-align: left;" class="awaiting_list">
+            <thead>
+            <tr>
+                <th>분류</th>
+                <th>제목</th>
+                <th>기안자</th>
+                <th>기안 일자</th>
+                <th>상태</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>휴가 신청서</td>
+                <td>[개발 1팀] 연차 사용 신청서</td>
+                <td>연인지</td>
+                <td>2024.01.05</td>
+                <td>
+                    <div class="process_check_button">
+                        <span class="process_check_text">결재 현황 확인</span>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>재택근무 신청서</td>
+                <td>[개발 1팀] 재택근무 신청서</td>
+                <td>연인지</td>
+                <td>2024.01.11</td>
+                <td>
+                    <div class="process_check_button">
+                        <span class="process_check_text">결재 현황 확인</span>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="awaiting_list_footer">
+            <input type="button" value="<<">
+            <input type="button" value="<">
+            <input type="button" value="1">
+            <input type="button" value="2">
+            <input type="button" value="3">
+            <input type="button" value="4">
+            <input type="button" value="5">
+            <input type="button" value="6">
+            <input type="button" value="7">
+            <input type="button" value="8">
+            <input type="button" value="9">
+            <input type="button" value="10">
+            <input type="button" value=">">
+            <input type="button" value=">>">
+        </div>
+    </div>
+
+        <div class="process_check_popup">
+            <div class="process_check_popup_title">
+                <span class="process_check_popup_title_text">결재 현황</span>
+                <span class="process_check_popup_doc_title">[개발 1팀] 재택근무 신청서</span>
+                <div class="doc_retrieve_button">
+                    <span class="doc_retrieve_text">회수</span>
+                </div>
+                <div class="check_done_button">
+                    <span class="check_done_text">확인</span>
+                </div>
+            </div>
+            <div class="process_check_content">
+                <div class="process_sender">
+                    <div class="sender_box">
+                        <span class="sender_text">기안자</span>
+                    </div>
+                    <div class="sender_profile_img"></div>
+                    <div class="sender_info">연인지 팀장</div>
+                    <div class="sender_group">개발본부 / 개발1팀</div>
+                </div>
+
+                <img class="process_arrow" src="/images/approval/arrow.png">
+                <div class="process_receiver1">
+                    <div class="receiver1_box">
+                        <span class="receiver1_text">대기 중</span>
+                    </div>
+                    <div class="receiver1_profile_img"></div>
+                    <div class="receiver1_info">차윤하 본부장</div>
+                    <div class="receiver1_group">개발본부</div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+</body>
+</html>

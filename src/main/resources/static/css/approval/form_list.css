@@ -42,7 +42,7 @@
 }
 .form_list_section {
     width: 315px;
-    height: 894px;
+    height: 922px;
     background-color: white;
     margin-left: 23px;
     margin-top: 7px;
@@ -74,7 +74,7 @@
 }
 .form_preview_section {
     width: 957px;
-    height: 944px;
+    height: 972px;
     background-color: white;
     margin-top: 7px;
     margin-left: 18px;
@@ -84,6 +84,7 @@
     flex-direction: row;
     background-color: #F5F5F5;
     width: 1335px;
+    height: 980px;
 }
 .writing_section {
     height: 70px;

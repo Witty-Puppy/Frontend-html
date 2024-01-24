@@ -7,15 +7,17 @@
     <title>writing document</title>
     <link rel="stylesheet" href="/css/main_layout.css"><!--body와 .main용-->
     <link rel="stylesheet" href="/css/approval/approval_side.css"><!--body와 .main용-->
-
     <link rel="stylesheet" as="style" crossorigin
     href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.11/themes/default/style.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.11/jstree.min.js"></script>  
 </head>
 <body>
 <div class="main">
     <th:block th:include="/layouts/sidemenu"/>
     <th:block th:include="/approval/approval_side.html"/>
-    <section clas="approval_writing_section">
+    <section class="doc_writing_section">
     <div class="new_form_title_section">
         <div class="new_form_title_box"></div>
         <span class="new_form_title">기안서 작성</span>
@@ -51,7 +53,6 @@
                     <div class="underline"></div>
                 </div>
             </div>
-            <div class="shaded_underline"></div>
             <div class="set_approval_line">
                 <div class="set_approval_line_button">
                     <span class="set_approval_line_text">결재선 지정</span>
@@ -62,8 +63,51 @@
             </div>
         </div>
     </div>
+    <div class="approval_line_popup">
+        <div class="approval_line_popup_title">
+            <span class="approval_line_popup_title_text">결재선 지정</span>
+            <span class="approval_line_popup_doc_title">[개발 1팀] 연차 신청서</span>
+            <div class="line_cancel_button">
+                <span class="line_cancel_text">취소</span>
+            </div>
+            <div class="line_check_button">
+                <span class="line_check_text">확인</span>
+            </div>
+        </div>
+        <div class="approval_line_popup_content">
+            <div class="group-content">
+                <!-- 조직도 내용 -->
+
+                <div class="groupchart">
+
+                    <div class="search-container">
+                        <input type="text" id="searchInput" placeholder="부서명 or 부서원을 입력하세요">
+                        <button id="searchButton">검색</button>
+
+                    </div>
+
+                    <div id = org-chart-box>
+                        <div id="org-chart">
+                            <!-- 조직도 트리뷰 들어갈 자리 -->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="assign_and_undo">
+                <img class="assign_button" src="/images/approval/approval_assign.png">
+                <img class="undo_button" src="/images/approval/approval_undo.png">
+            </div>
+            <div class="group-content-assigned">
+                <div class="groupchart-assigned">
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/group/groupchart.js"></script>
     </section>
 </div>
-
 </body>
 </html>
