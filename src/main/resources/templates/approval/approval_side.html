@@ -19,9 +19,11 @@
   <div class="approval_sidemenu">
     <div class="approval_sidemenu_on">
       <div class="title">전자 결재</div>
-      <div class="writing_button">
-        <div class="writing_text">기안서 작성</div>
-      </div>
+      <a th:href="@{/approval/form}" class="new_form_title_box">
+        <div class="writing_button">
+          <div class="writing_text">기안서 작성</div>
+        </div>
+      </a>
 
       <div class=status>
         <div class="processing">
@@ -41,9 +43,11 @@
           <div class="inbox_title">결재 상신함</div>
         </div>
         <div class="inbox_menu_section">
-          <div class="on_process">
-            <span class="inbox_text">결재 진행함</span>
-          </div>
+          <a th:href="@{/approval/on_process_list}" class="go_to_on_process_list">
+            <div class="on_process">
+              <span class="inbox_text">결재 진행함</span>
+            </div>
+          </a>
           <div class="completed">
             <span class="inbox_text">결재 완료함</span>
           </div>
@@ -65,9 +69,11 @@
           <span  class="outbox_title">결재 수신함</span>
         </div>
         <div class="outbox_menu_section">
-          <div class="awating">
-            <span class="outbox_text">결재 대기함</span>
-          </div>
+          <a th:href="@{/approval/awaiting_list}" class="go_to_awaiting_list">
+            <div class="awating">
+              <span class="outbox_text">결재 대기함</span>
+            </div>
+          </a>
           <div class="out_completed">
             <span class="outbox_text">결재 완료함</span>
           </div>

@@ -20,7 +20,6 @@
         <div class="new_form_title_box"></div>
         <span class="new_form_title">기안서 작성</span>
     </div>
-
     <div class="form_content">
         <div class="form_search_and_list">
             <div class="form_search_section">
@@ -53,18 +52,16 @@
                     <div class="selection_indicator"></div>
                     <span class="form_list_title">SW 사용 신청서</span>
                 </div>
-                <div class="form_list" onclick="selectForm(this)">
-                    <div class="selection_indicator"></div>
-                    <span class="form_list_title">예산 신청서</span>
-                </div>
             </div>
         </div>
 
         <div class="form_preview_section">
             <div class="writing_section">
-                <div class="list_writing_button">
-                    <span class="list_writing_text">작성하기</span>
-                </div>
+                <a th:href="@{/approval/writing}" class="go_to_new_form">
+                    <div class="list_writing_button">
+                        <span class="list_writing_text">작성하기</span>
+                    </div>
+                </a>
             </div>
 
             <div class="preview_section">
@@ -121,8 +118,6 @@
             return '/approval/wfh_form';
         case 'SW 사용 신청서':
             return '/approval/sw_form';
-        case '연장근로 신청서':
-            return '/approval/overtime_form';
         default:
             return '';
     }
