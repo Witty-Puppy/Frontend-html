@@ -16,6 +16,9 @@
     font-weight: bold;
     margin-left: 68px;
 }
+.go_to_new_form{
+    text-decoration: none;
+}
 .form_search_section {
     display: flex;
     align-items: center;
@@ -79,6 +82,8 @@
 .form_content {
     display: flex;
     flex-direction: row;
+    background-color: #F5F5F5;
+    width: 1335px;
 }
 .writing_section {
     height: 70px;
