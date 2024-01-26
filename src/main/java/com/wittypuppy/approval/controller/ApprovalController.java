@@ -49,4 +49,35 @@ public class ApprovalController {
 
     @GetMapping("/on_process_list")
     public String onProcessList() { return "approval/on_process_list";}
+
+    @GetMapping("/finished_doc")
+    public String finishedDoc() { return "approval/finished_doc";}
+    @GetMapping("/doc_detail")
+    public String docDetail() { return "approval/doc_detail";}
+    @GetMapping("/recieved_doc_detail")
+    public String recieved_DocDetail() { return "approval/recieved_doc_detail";}
+    @GetMapping("/rejected_list")
+    public String rejectedList() {
+        return "approval/rejected_list";
+    }
+    @GetMapping("/retrieved_list")
+    public String retrievedList() {
+        return "approval/retrieved_list";
+    }
+    @GetMapping("/saved_list")
+    public String savedList() {
+        return "approval/saved_list";
+    }
+    @GetMapping("/approved_list")
+    public String approvedList() {
+        return "approval/approved_list";
+    }
+    @GetMapping("/represent_list")
+    public String representList() {
+        return "approval/represent_list";
+    }
+    @GetMapping("/view_list")
+    public String viewList() {
+        return "approval/view_list";
+    }
 }

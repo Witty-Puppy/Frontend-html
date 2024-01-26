@@ -33,7 +33,9 @@
 	align-items: center;
 	cursor: pointer;
 }
-.new_form_title_box, .go_to_awaiting_list, .go_to_on_process_list{
+.new_form_title_box, .go_to_awaiting_list, .go_to_on_process_list, .go_to_on_finished_doc,
+.go_to_rejected_list, .go_to_retrieved_list, .go_to_saved_list, .go_to_approved_list,
+.go_to_represent_list, .go_to_view_list{
 	text-decoration: none;
 }
 .writing_text { 

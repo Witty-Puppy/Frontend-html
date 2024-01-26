@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="doc_detail.css">
+    <title>doc detail</title>
+    <link rel="stylesheet" href="/css/main_layout.css"><!--body와 .main용-->
+    <link rel="stylesheet" href="/css/approval/doc_detail.css"><!--body와 .main용-->
+    <link rel="stylesheet" as="style" crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.11/themes/default/style.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.11/jstree.min.js"></script>  
+</head>
+<body>
+<div class="main">
+    <th:block th:include="/layouts/sidemenu"/>
+    <th:block th:include="/approval/approval_side.html"/>
+    <section class="awaiting_list_section">
+    <div class="doc_detail_title_section">
+        <div class="doc_detail_title_box"></div>
+        <span class="doc_detail_title">문서함</span>
+    </div>
+
+    <div class="writing_and_approval_line">
+        <div class="writing_button_and_content">
+            <div class="writing_section">
+                <div class="view_doc_list_button">
+                    <span class="view_doc_list_text">목록</span>
+                </div>
+                <div class="sharing_doc_button">
+                    <span class="sharing_doc_text">열람자 지정</span>
+                </div>
+                <div class="approval_submit_button">
+                    <span class="submitting_text">재기안</span>
+                </div>
+            </div>
+
+            <div class="form_writing_section">
+            </div>
+        </div>
+
+        <div class="approval_line_section">
+            <div class="approval_line_title">
+                <div class="approval_line_list">
+                    <span class="approval_line_list_text">결재선</span>
+                    <div class="underline"></div>
+                </div>
+                <div class="view_line_list">
+                    <span class="view_line_list_text">열람자</span>
+                    <div class="underline"></div>
+                </div>
+                <div class="attached_file_list">
+                    <span class="attached_file_list_text">첨부문서</span>
+                    <div class="underline"></div>
+                </div>
+            </div>
+<!--            <div class="set_approval_line">-->
+<!--                <div class="set_approval_line_button">-->
+<!--                    <span class="set_approval_line_text">결재선 지정</span>-->
+<!--                </div>-->
+<!--            </div>-->
+            <div class="approval_employee_list">
+                
+            </div>
+        </div>
+    </div>
+    <!-- <div class="approval_line_popup">
+        <div class="approval_line_popup_title">
+            <span class="approval_line_popup_title_text">결재선 지정</span>
+            <span class="approval_line_popup_doc_title">[개발 1팀] 연차 신청서</span>
+            <div class="line_cancel_button">
+                <span class="line_cancel_text">취소</span>
+            </div>
+            <div class="line_check_button">
+                <span class="line_check_text">확인</span>
+            </div>
+        </div>
+        <div class="approval_line_content">
+            <div class="groupchart">
+
+                <div class="search-container">
+                  <input type="text" id="searchInput" placeholder="부서명 or 부서원을 입력하세요">
+                  <button id="searchButton">검색</button>
+            
+                </div>
+            
+                      <div id = org-chart-box>
+                        <div id="org-chart">
+                           조직도 트리뷰 들어갈 자리 -->
+                        <!-- </div>
+                      </div>
+            
+              </div>
+        </div>
+    </div>
+    <script src="groupchart.js"></script> -->
+    </section>
+</div>
+</body>
+</html>

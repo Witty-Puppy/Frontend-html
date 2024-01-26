@@ -48,18 +48,26 @@
               <span class="inbox_text">결재 진행함</span>
             </div>
           </a>
-          <div class="completed">
-            <span class="inbox_text">결재 완료함</span>
-          </div>
-          <div class="rejected">
-            <span class="inbox_text">반려 문서함</span>
-          </div>
-          <div class="retrieved">
-            <span class="inbox_text">회수 문서함</span>
-          </div>
-          <div class="saved">
-            <span class="inbox_text">임시 저장</span>
-          </div>
+          <a th:href="@{/approval/finished_doc}" class="go_to_on_finished_doc">
+            <div class="completed">
+              <span class="inbox_text">결재 완료함</span>
+            </div>
+          </a>
+          <a th:href="@{/approval/rejected_list}" class="go_to_rejected_list">
+            <div class="rejected">
+              <span class="inbox_text">반려 문서함</span>
+            </div>
+          </a>
+          <a th:href="@{/approval/retrieved_list}" class="go_to_retrieved_list">
+            <div class="retrieved">
+              <span class="inbox_text">회수 문서함</span>
+            </div>
+          </a>
+          <a th:href="@{/approval/saved_list}" class="go_to_saved_list">
+            <div class="saved">
+              <span class="inbox_text">임시 저장</span>
+            </div>
+          </a>
         </div>
       </div>
 
@@ -74,12 +82,16 @@
               <span class="outbox_text">결재 대기함</span>
             </div>
           </a>
-          <div class="out_completed">
-            <span class="outbox_text">결재 완료함</span>
-          </div>
-          <div class="represent">
-            <span class="outbox_text">대리 결재</span>
-          </div>
+          <a th:href="@{/approval/approved_list}" class="go_to_approved_list">
+            <div class="out_completed">
+              <span class="outbox_text">결재 완료함</span>
+            </div>
+          </a>
+          <a th:href="@{/approval/represent_list}" class="go_to_represent_list">
+            <div class="represent">
+              <span class="outbox_text">대리 결재</span>
+            </div>
+          </a>
         </div>
       </div>
       
@@ -88,11 +100,13 @@
           <img class="view_drop_down" src="/images/approval/opened_dropdown.png"/>
           <span class="view_title">열람함</span>
         </div>
-        <div class="view_menu_section">
-          <div class="view_menu">
-            <span class="view_text">열람함</span>
+        <a th:href="@{/approval/view_list}" class="go_to_view_list">
+          <div class="view_menu_section">
+            <div class="view_menu">
+              <span class="view_text">열람함</span>
+            </div>
           </div>
-        </div>
+        </a>
       </div>
       <!-- <div class="new">N</div> -->
 
